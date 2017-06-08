@@ -20,7 +20,7 @@ The input file should contain one sentence by line, and they have to be tokenize
 
 
 ## Train a model
-
+### Simply use `./run.sh` to train model on WNUT17 CONLL data.
 To train your own model, you need to use the train.py script and provide the location of the training, development and testing set:
 
 ```
