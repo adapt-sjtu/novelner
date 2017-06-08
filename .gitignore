@@ -99,3 +99,11 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# IDEA
+.idea/
+*.iml
+
+# Project temp files
+tagger/evaluation/temp/
+
