@@ -15,3 +15,4 @@ with open('train.conll', 'w', encoding='utf-8') as train_f, open('dev.conll', 'w
 		dev_f.write(line + '\n\t\n')
 	for line in test:
 		test_f.write(line + '\n\t\n')
+

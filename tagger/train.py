@@ -29,7 +29,7 @@ optparser.add_option(
     help="Test set location"
 )
 optparser.add_option(
-    "-s", "--tag_scheme", default="iobes",
+    "-s", "--tag_scheme", default="iob",
     help="Tagging scheme (IOB or IOBES)"
 )
 optparser.add_option(
