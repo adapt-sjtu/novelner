@@ -39,9 +39,9 @@ oov = 'embedding'
 fine_tune = True
 # Model Hyperparameters
 #tf.flags.DEFINE_integer("embedding_dim", 128, "Dimensionality of character embedding (default: 128)") #not used 
-tf.flags.DEFINE_string("train_path", "eng.train.iobes.act", "Train Path")
-tf.flags.DEFINE_string("test_path", "eng.testa.iobes.act", "Test Path")
-tf.flags.DEFINE_string("dev_path", "eng.testb.iobes.act", "dev Path")
+tf.flags.DEFINE_string("train_path", "../data/split/train.conll.iob", "Train Path") # eng.train.iobes.act
+tf.flags.DEFINE_string("test_path", "../data/split/test.conll.iob", "Test Path")  # eng.testa.iobes.act
+tf.flags.DEFINE_string("dev_path", "../data/split/dev.conll.iob", "dev Path") # eng.testb.iobes.act
 tf.flags.DEFINE_float("dropout_keep_prob", 0.5, "Dropout keep probability (default: 0.5)")
 tf.flags.DEFINE_float("grad_clip", 5, "value for gradient clipping to avoid exploding/vanishing gradient(default: 5.0) in LSTM")
 tf.flags.DEFINE_float("max_global_clip", 5.0, "value for gradient clipping to avoid exploding/vanishing gradient overall(default: 1.0)")
