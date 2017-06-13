@@ -60,6 +60,8 @@ def read_conll_sequence_labeling(path, word_alphabet, label_alphabet, word_colum
             else:
                 tokens = line.strip().split()
                 word = tokens[word_column]
+		#print 'tokens:',tokens
+		#print 'label_column:', label_column
                 label = tokens[label_column]
 
                 words.append(word)

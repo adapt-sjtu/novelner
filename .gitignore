@@ -107,3 +107,7 @@ ENV/
 # Project temp files
 tagger/evaluation/temp/
 
+# Running results
+NN_NER_tensorFlow/Dev_Predictions*
+NN_NER_tensorFlow/test_Predictions*
+NN_NER_tensorFlow/runs/*

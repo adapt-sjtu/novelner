@@ -31,7 +31,7 @@ label_name ="ner"
 label_alphabet = Alphabet(label_name)
 logger = utils.get_logger("MainCode")
 embedding = "glove"
-embedding_path = "glove.6B.100d.gz"
+embedding_path = "/home/zhiyi/data/glove.twitter.27B.100d.gz" # "glove.6B.100d.gz"
 
 
 
@@ -50,7 +50,7 @@ tf.flags.DEFINE_float("max_global_clip", 5.0, "value for gradient clipping to av
 # Training parameters
 tf.flags.DEFINE_integer("batch_size", 10, "Batch Size (default: 64)")
 tf.flags.DEFINE_integer("word_col", 0, "position of the word in input file (default: 0)")
-tf.flags.DEFINE_integer("label_col", 3, "position of the label in input file (default: 3)")
+tf.flags.DEFINE_integer("label_col", 1, "position of the label in input file (default: 3)")
 tf.flags.DEFINE_integer("n_hidden_LSTM", 200, "Number of hidden units in LSTM (default: 200)")
 tf.flags.DEFINE_integer("num_epochs", 50, "Number of training epochs (default: 200)")
 tf.flags.DEFINE_integer("num_filters", 30, "Number of filters to apply for char CNN (default: 30)") 
@@ -267,7 +267,7 @@ with tf.Session(config=session_conf) as sess:
         accuracy,accuracy_low_classes = af.predictAccuracyAndWrite(logits,transition_params,act_seq_lengths,y_batch,step,x_batch,word_alphabet,label_alphabet,beginZero=FLAGS.PadZeroBegin)
 
         time_str = datetime.datetime.now().isoformat()
-        print("{}: step {},  accuracy on set {:g}, accuracy for classes except Others: {:g}".format(time_str, step,accuracy,accuracy_low_classes))
+        print("{}: step {},  accuracy on dev set {:g}, accuracy for classes except Others: {:g}".format(time_str, step,accuracy,accuracy_low_classes))
         if writer:
                 writer.add_summary(summaries, step)
         return accuracy,accuracy_low_classes
@@ -283,7 +283,7 @@ with tf.Session(config=session_conf) as sess:
             feed_dict)
 
         time_str = datetime.datetime.now().isoformat()
-        print("{}: step {}, loss {:g}".format(time_str, step, loss))
+        #print("{}: step {}, loss {:g}".format(time_str, step, loss))
         train_summary_writer.add_summary(summaries, step)
 
     # Generate batches
