@@ -1,3 +1,4 @@
+import os
 from sys import argv, stdin, stdout
 
 # BIO -> BIOES
@@ -13,7 +14,7 @@ def tag_name(full):
   else:
     return full[2:]
 
-def from_iobes():
+def from_iobes(inputfilename):
   def get_new(true, prev_true, equal_types):
     if true == 'S' and equal_types:
       return 'B'
@@ -27,8 +28,7 @@ def from_iobes():
       return 'I'
     else:
       return true
-
-  lines = stdin.readlines()
+  lines = open(inputfilename).readlines()
   for ind, line in enumerate(lines):
     if line != '\n':
       splitted = line.strip().split(' ')
@@ -52,10 +52,10 @@ def from_iobes():
       joined = ''
     print(joined)
 
-def to_iobes():
+def to_iobes(inputfilename):
   current = ''
   next_ = ''
-  lines = stdin.readlines()
+  lines = open(inputfilename).readlines()
   for ind, line in enumerate(lines):
     if line != '\n':
       splitted = line.strip().split(' ')
@@ -88,9 +88,9 @@ def to_iobes():
     print(joined)
 
 
-def from_iob():
+def from_iob(inputfilename):
   previous = None
-  for line in stdin:
+  for line in open(inputfilename):
     if line == '\n':
       if previous is not None:
         print(' '.join(previous))
@@ -118,9 +118,9 @@ def from_iob():
   if previous:
     print(' '.join(previous))
 
-def to_iob():
+def to_iob(inputfilename):
   previous = None
-  for line in stdin:
+  for line in open(inputfilename):
     if line == '\n':
       if previous is not None:
         print(' '.join(previous))
