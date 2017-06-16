@@ -51,12 +51,12 @@ tf.flags.DEFINE_float("max_global_clip", 5.0, "value for gradient clipping to av
 tf.flags.DEFINE_integer("batch_size", 10, "Batch Size (default: 64)")
 tf.flags.DEFINE_integer("word_col", 0, "position of the word in input file (default: 0)")
 tf.flags.DEFINE_integer("label_col", 1, "position of the label in input file (default: 3)")
-tf.flags.DEFINE_integer("n_hidden_LSTM", 200, "Number of hidden units in LSTM (default: 200)")
-tf.flags.DEFINE_integer("num_epochs", 50, "Number of training epochs (default: 200)")
-tf.flags.DEFINE_integer("num_filters", 30, "Number of filters to apply for char CNN (default: 30)") 
+tf.flags.DEFINE_integer("n_hidden_LSTM", 50, "Number of hidden units in LSTM (default: 200)")
+tf.flags.DEFINE_integer("num_epochs", 30, "Number of training epochs (default: 200)")
+tf.flags.DEFINE_integer("num_filters", 10, "Number of filters to apply for char CNN (default: 30)")
 tf.flags.DEFINE_integer("filter_size", 3, "filter_size (default: 3 )")
-tf.flags.DEFINE_integer("evaluate_every", 1000, "Evaluate model on dev set after this many steps (default: 100)")
-tf.flags.DEFINE_integer("char_embedd_dim", 30, "char_embedd_dim(default: 30)")
+tf.flags.DEFINE_integer("evaluate_every", 300, "Evaluate model on dev set after this many steps (default: 100)")
+tf.flags.DEFINE_integer("char_embedd_dim", 10, "char_embedd_dim(default: 30)")
 tf.flags.DEFINE_integer("Optimizer", 1, "Adam : 1 , SGD:2")
 tf.flags.DEFINE_integer("num_checkpoints", 5, "Number of checkpoints to store (default: 5)")
 tf.flags.DEFINE_float("starter_learning_rate", 0.015, "Initial learning rate for the optimizer. (default: 1e-3)")
@@ -68,7 +68,7 @@ tf.flags.DEFINE_boolean("log_device_placement", False, "Log placement of ops on 
 tf.flags.DEFINE_boolean("PadZeroBegin", False, "where to pad zero in the input")
 FLAGS = tf.flags.FLAGS
 FLAGS._parse_flags()
-Flags_Dict= utils.print_FLAGS(FLAGS,logger)
+Flags_Dict = utils.print_FLAGS(FLAGS,logger)
 
 train_path = FLAGS.train_path
 test_path = FLAGS.test_path
@@ -262,7 +262,8 @@ with tf.Session(config=session_conf) as sess:
     
     def dev_step (session,BiLSTM,PadZeroBegin,max_length,x_batch,y_batch,act_seq_lengths,
         dropout_keep_prob,embedd_table,step,char_batch,char_embedd_table,writer= None):
-        feed_dict=af.create_feed_Dict(BiLSTM,PadZeroBegin,max_length,x_batch,y_batch,act_seq_lengths,dropout_keep_prob,embedd_table,char_batch,char_embedd_table)
+
+        feed_dict = af.create_feed_Dict(BiLSTM,PadZeroBegin,max_length,x_batch,y_batch,act_seq_lengths,dropout_keep_prob,embedd_table,char_batch,char_embedd_table)
         logits, transition_params,summaries = session.run([BiLSTM.logits, BiLSTM.transition_params,dev_summary_op],feed_dict=feed_dict)
         accuracy,accuracy_low_classes = af.predictAccuracyAndWrite(logits,transition_params,act_seq_lengths,y_batch,step,x_batch,word_alphabet,label_alphabet,beginZero=FLAGS.PadZeroBegin)
 
