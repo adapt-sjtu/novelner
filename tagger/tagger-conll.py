@@ -93,7 +93,7 @@ with codecs.open(opts.input, 'r', 'utf-8') as f_input:
                                              #for w, y in zip(words, y_preds)))
             elems = [ (words[i], y_labels[i], y_preds[i]) for i in range(len(y_labels))]
             for x,y,z in elems:
-                f_output.write('%s\t%s\t%s\n' % (x, y, z) )
+                f_output.write('%s %s %s\n' % (x, y, z) )
 
             f_output.write('\n')
             words = []
