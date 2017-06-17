@@ -1,0 +1,8 @@
+processed 32682 tokens with 944 phrases; found: 919 phrases; correct: 748.
+accuracy:  99.08%; precision:  81.39%; recall:  79.24%; FB1:  80.30
+      corporation: precision:  86.84%; recall:  76.15%; FB1:  81.15  114
+     creativework: precision:  65.71%; recall:  62.16%; FB1:  63.89  70
+            group: precision:  90.00%; recall:  19.35%; FB1:  31.86  20
+         location: precision:  94.35%; recall:  94.68%; FB1:  94.51  283
+           person: precision:  73.87%; recall:  98.99%; FB1:  84.60  398
+          product: precision:  70.59%; recall:  35.29%; FB1:  47.06  34
