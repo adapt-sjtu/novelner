@@ -1,11 +1,8 @@
-# HOW TO RUN:
-# ./conlleval < ../zytest.txt > testresult.txt
-
-processed 6955 tokens with 231 phrases; found: 136 phrases; correct: 75.
-accuracy:  96.16%; precision:  55.15%; recall:  32.47%; FB1:  40.87
-      corporation: precision: 100.00%; recall:  33.33%; FB1:  50.00  8
-     creativework: precision: 100.00%; recall:   6.25%; FB1:  11.76  1
-            group: precision:   0.00%; recall:   0.00%; FB1:   0.00  2
-         location: precision:  81.82%; recall:  44.26%; FB1:  57.45  33
-           person: precision:  42.22%; recall:  48.72%; FB1:  45.24  90
-          product: precision:  50.00%; recall:   4.76%; FB1:   8.70  2
+processed 6955 tokens with 231 phrases; found: 183 phrases; correct: 125.
+accuracy:  96.98%; precision:  68.31%; recall:  54.11%; FB1:  60.39
+      corporation: precision:  76.92%; recall:  41.67%; FB1:  54.05  13
+     creativework: precision:  25.00%; recall:   6.25%; FB1:  10.00  4
+            group: precision:  60.00%; recall:  29.03%; FB1:  39.13  15
+         location: precision:  67.16%; recall:  73.77%; FB1:  70.31  67
+           person: precision:  74.03%; recall:  73.08%; FB1:  73.55  77
+          product: precision:  42.86%; recall:  14.29%; FB1:  21.43  7

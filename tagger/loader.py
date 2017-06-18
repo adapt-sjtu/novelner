@@ -167,9 +167,8 @@ def augment_with_pretrained(dictionary, ext_emb_path, words):
     pretrained = set([
         line.rstrip().split()[0].strip()
         for line in codecs.open(ext_emb_path, 'r', 'utf-8')
-        if len(ext_emb_path) > 0
+        if len(ext_emb_path) > 0 and len(line)>50
     ])
-
     # We either add every word in the pretrained file,
     # or only words given in the `words` list to which
     # we can assign a pretrained embedding
