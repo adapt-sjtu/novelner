@@ -7313,12 +7313,12 @@
 7312
 7313
 7314
-surface forms:     precision:  64.02%; recall:  96.33%; FB1:  76.92
-processed 6955 tokens with 231 phrases; found: 183 phrases; correct: 125.
-accuracy:  96.98%; precision:  68.31%; recall:  54.11%; FB1:  60.39
-      corporation: precision:  76.92%; recall:  41.67%; FB1:  54.05  13
-     creativework: precision:  25.00%; recall:   6.25%; FB1:  10.00  4
-            group: precision:  60.00%; recall:  29.03%; FB1:  39.13  15
-         location: precision:  67.16%; recall:  73.77%; FB1:  70.31  67
-           person: precision:  74.03%; recall:  73.08%; FB1:  73.55  77
-          product: precision:  42.86%; recall:  14.29%; FB1:  21.43  7
+surface forms:     precision:  70.52%; recall:  95.31%; FB1:  81.06
+processed 6955 tokens with 231 phrases; found: 194 phrases; correct: 143.
+accuracy:  97.21%; precision:  73.71%; recall:  61.90%; FB1:  67.29
+      corporation: precision:  70.59%; recall:  50.00%; FB1:  58.54  17
+     creativework: precision:  66.67%; recall:  25.00%; FB1:  36.36  6
+            group: precision:  32.14%; recall:  29.03%; FB1:  30.51  28
+         location: precision:  83.05%; recall:  80.33%; FB1:  81.67  59
+           person: precision:  83.54%; recall:  84.62%; FB1:  84.08  79
+          product: precision:  60.00%; recall:  14.29%; FB1:  23.08  5
