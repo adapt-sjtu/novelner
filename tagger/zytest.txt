@@ -45,7 +45,7 @@ festival O O
 cant O O
 wait O O
 4 O O
-GAC O B-group
+GAC O O
 2night O O
 ! O O
 an O O
@@ -158,7 +158,7 @@ best O O
 news O O
 !!!! O O
 
-Jessum B-person O
+Jessum B-person B-person
 's O O
 Question O O
 of O O
@@ -324,8 +324,8 @@ my O O
 favorite O O
 . O O
 
-Anja B-person O
-Rubik I-person O
+Anja B-person B-person
+Rubik I-person I-person
 Model O O
 in O O
 Lingerie O O
@@ -683,7 +683,7 @@ RT O O
 : O O
 Y O O
 does O O
-Pinky B-person O
+Pinky B-person B-person
 have O O
 a O O
 music O O
@@ -816,8 +816,8 @@ RT O O
 : O O
 It O O
 's O O
-Yom O B-group
-Kippur O I-group
+Yom O O
+Kippur O O
 eve O O
 , O O
 so O O
@@ -1273,7 +1273,7 @@ people O O
 showing O O
 off O O
 their O O
-iPhones B-product B-corporation
+iPhones B-product B-product
 on O O
 facebook B-corporation B-corporation
 today O O
@@ -1498,7 +1498,7 @@ their O O
 apps O O
 from O O
 my O O
-iOS B-product O
+iOS B-product B-product
 devices O O
 ! O O
 
@@ -1586,7 +1586,7 @@ Demos B-creativework O
 @ O O
 3AM O O
 on O O
-BCAT B-group B-group
+BCAT B-group O
 feat O O
 @BlissyCakes O O
 @YaGirlNicolette O O
@@ -1715,7 +1715,7 @@ yesss O O
 #futbol O O
 &gt; O O
 Newcastle B-group B-group
-Jets I-group B-group
+Jets I-group I-group
 Youth I-group I-group
 v O O
 AIS B-group O
@@ -1768,7 +1768,7 @@ nymor O O
 lol O O
 
 dear O O
-youtube B-corporation O
+youtube B-corporation B-corporation
 why O O
 does O O
 it O O
@@ -2117,7 +2117,7 @@ http://bit.ly/cYGBdz O O
 Costa O B-location
 Rican O I-location
 group O O
-CocoFunka B-group O
+CocoFunka B-group B-person
 power O O
 this O O
 week O O
@@ -2320,8 +2320,8 @@ http://ow.ly/i/3TYe O O
 @whitneytweets O O
 @matthewlawton O O
 and O O
-Wonder B-person O
-Woman I-person O
+Wonder B-person B-person
+Woman I-person I-person
 ! O O
 
 Toy B-creativework O
@@ -2481,10 +2481,10 @@ to O O
 2-year O O
 extension O O
 - O O
-San B-location B-group
-Jose I-location I-group
-Mercury B-group I-group
-News I-group O
+San B-location B-corporation
+Jose I-location I-corporation
+Mercury B-group I-corporation
+News I-group I-corporation
 http://dlvr.it/5RcvP O O
 #ANADucks O O
 
@@ -2527,7 +2527,7 @@ perfecy O O
 
 RT O O
 @robmoysey O O
-Eyeopener B-group O
+Eyeopener B-group B-group
 vs O O
 . O O
 Ryerson B-group B-group
@@ -2689,8 +2689,8 @@ teachers O O
 chinese O O
 takeaways O O
 , O O
-gatt B-person O
-holly I-person B-person
+gatt B-person B-person
+holly I-person I-person
 , O O
 phil B-person B-person
 collins I-person I-person
@@ -2820,9 +2820,9 @@ Mochi O O
 waffles O O
 ! O O
 @ O O
-new B-location O
-Teaze I-location O
-cafe I-location O
+new B-location B-location
+Teaze I-location I-location
+cafe I-location I-location
 by O O
 the O O
 library O O
@@ -2839,8 +2839,8 @@ deal O O
 ! O O
 http://tinyurl.com/2fd6yba O O
 
-The B-location O
-Metro I-location O
+The B-location B-location
+Metro I-location I-location
 Sept O O
 26 O O
 Mannie B-person B-person
@@ -2932,8 +2932,8 @@ younger O O
 After B-product O
 Eventide I-product O
 ( O O
-Kindle B-product O
-Edition)By O O
+Kindle B-product B-product
+Edition)By O I-product
 Catherine B-person B-person
 Olson I-person I-person
 Buy O O
@@ -3313,7 +3313,7 @@ VERY O O
 strong O O
 with O O
 the O O
-#Padres B-group B-group
+#Padres B-group O
 tonight O O
 . O O
 We O O
@@ -3547,17 +3547,17 @@ viewers O O
 Sh O O
 ... O O
 
-Artful O B-product
-Pumpkins O I-product
-Ladies O I-product
-Long O I-product
-Sleeve O I-product
-: O I-product
-Artful O I-product
-Pumpkins O I-product
-Ladies O I-product
-Long O I-product
-Sleeve O I-product
+Artful O O
+Pumpkins O O
+Ladies O O
+Long O O
+Sleeve O O
+: O O
+Artful O O
+Pumpkins O O
+Ladies O O
+Long O O
+Sleeve O O
 . O O
 Altered O O
 vintage O O
@@ -3634,9 +3634,9 @@ chance O O
 Adam B-person B-person
 Beyer I-person I-person
 : O O
-Swedish O O
-Techno O O
-Pioneer O O
+Swedish O B-product
+Techno O I-product
+Pioneer O I-product
 : O O
 When O O
 it O O
@@ -3971,7 +3971,7 @@ have O O
 p O O
 ... O O
 
-ellwood B-person B-location
+ellwood B-person B-person
 's O O
 sushi O O
 , O O
@@ -4089,10 +4089,10 @@ maybe O O
 'll O O
 meet O O
 again O O
-No O B-creativework
-No O I-creativework
-No O I-creativework
-No O I-creativework
+No O O
+No O O
+No O O
+No O O
 ( O O
 8 O O
 ) O O
@@ -4105,13 +4105,13 @@ Games O O
 ' O O
 Vanquish B-product O
 for O O
-PS3 B-product O
+PS3 B-product B-product
 , O O
 Xbox B-product B-product
 360 I-product I-product
 : O O
 by O O
-Widro B-corporation O
+Widro B-corporation B-corporation
 - O O
 September O O
 17 O O
@@ -4242,13 +4242,13 @@ tomorrow O O
 . O O
 
 @erutan O O
-Stanford B-group B-location
+Stanford B-group B-group
 's O O
 Robert B-person B-person
 Laughlin I-person I-person
 ( O O
-Nobel O B-person
-Physics1998 O I-person
+Nobel O O
+Physics1998 O O
 ) O O
 has O O
 a O O
@@ -4284,16 +4284,16 @@ RT O O
 Tonight O O
 ! O O
 " O O
-Sex B-creativework B-creativework
-In I-creativework I-creativework
-The I-creativework I-creativework
-City I-creativework I-creativework
+Sex B-creativework O
+In I-creativework O
+The I-creativework B-location
+City I-creativework I-location
 " O O
 Pt O O
 . O O
 2 O O
 at O O
-#ZULA O B-location
+#ZULA O O
 ! O O
 Hosted O O
 By O O
@@ -4520,7 +4520,7 @@ driving O O
 driving O O
 away O O
 to O O
-Phil B-location B-person
+Phil B-location B-location
 . O O
 Tasty O O
 dinner O O
@@ -4648,8 +4648,8 @@ remembered O O
 this O O
 week O O
 is O O
-The B-location B-creativework
-Heatwave I-location I-creativework
+The B-location O
+Heatwave I-location O
 7th O O
 birthday O O
 ... O O
@@ -4861,8 +4861,8 @@ Mood O O
 excited O O
 !! O O
 GOO O O
-WB B-group O
-WILDCATS I-group B-group
+WB B-group B-group
+WILDCATS I-group I-group
 ! O O
 
 As O O
@@ -5136,7 +5136,7 @@ the O O
 year O O
 :) O O
 
-Pedigree B-corporation O
+Pedigree B-corporation B-corporation
 Donates O O
 Dog O O
 Food O O
@@ -5161,7 +5161,7 @@ Face O O
 ... O O
 http://bit.ly/bYWzrq O O
 
-MOTOGP O O
+MOTOGP O B-group
 : O O
 Round O O
 13 O O
@@ -5231,7 +5231,7 @@ Octoberfest O I-group
 RT O O
 @AllTeensThings O O
 : O O
-Christmas O O
+Christmas O B-group
 was O O
 so O O
 much O O
@@ -5257,14 +5257,14 @@ a O O
 wicked O O
 week O O
 
-#October O B-product
-Iron B-creativework I-product
-Man I-creativework I-product
-2 I-creativework I-product
-( O I-product
-Three-Disc O I-product
-Blu-ray/DVD O I-product
-Combo O I-product
+#October O O
+Iron B-creativework B-creativework
+Man I-creativework I-creativework
+2 I-creativework I-creativework
+( O O
+Three-Disc O O
+Blu-ray/DVD O O
+Combo O O
 + O O
 Digital O O
 Copy O O
@@ -5277,7 +5277,7 @@ Jr I-person I-person
 ., O O
 Mickey B-person B-person
 Rourke I-person I-person
-Direc O I-person
+Direc O O
 ... O O
 http://bit.ly/a6iCPn O O
 
@@ -5404,7 +5404,7 @@ taking O O
 long O O
 walks O O
 in O O
-gucci B-corporation O
+gucci B-corporation B-corporation
 shoes O O
 ... O O
 
@@ -5469,7 +5469,7 @@ when O O
 theycame O O
 to O O
 the O O
-uk B-location B-location
+uk B-location O
 this O O
 year O O
 , O O
@@ -5513,7 +5513,7 @@ Roger B-person B-person
 Waters I-person I-person
 tickets O O
 on O O
-KLH B-group B-location
+KLH B-group B-group
 tonight O O
 between O O
 6:15 O O
@@ -5886,8 +5886,8 @@ Im O O
 performing O O
 tonight O O
 at O O
-8 O B-location
-Bond O I-location
+8 O O
+Bond O B-location
 Street O I-location
 in O O
 Soho B-location B-location
@@ -5925,7 +5925,7 @@ delay O O
 between O O
 commit O O
 to O O
-SCM O B-corporation
+SCM O O
 and O O
 running O O
 on O O
@@ -6134,9 +6134,9 @@ sand O O
 
 right O O
 . O O
-Five O B-group
-Star O I-group
-Day O I-group
+Five O O
+Star O O
+Day O O
 came O O
 out O O
 in O O
@@ -6164,8 +6164,8 @@ for O O
 this O O
 ! O O
 
-The B-group O
-Wolves I-group B-group
+The B-group B-group
+Wolves I-group I-group
 to O O
 host O O
 the B-group O
@@ -6529,8 +6529,8 @@ mar O O
 ( O O
 8 O O
 
-Halo B-product O
-Reach I-product O
+Halo B-product B-product
+Reach I-product I-product
 was O O
 a O O
 bit O O
@@ -6543,11 +6543,11 @@ Bowl B-location B-location
 Long I-location I-location
 Island I-location I-location
 ( O O
-138 O B-location
-West O I-location
+138 O O
+West O B-location
 Ave O I-location
 , O O
-Patchogue) B-location O
+Patchogue) B-location B-location
 . O O
 http://4sq.com/aX6N26 O O
 
@@ -6902,8 +6902,8 @@ tonight O O
 : O O
 Gnocchi B-product O
 with O O
-Italian B-product O
-Sausage I-product O
+Italian B-product B-product
+Sausage I-product I-product
 , O O
 Swiss B-product B-person
 Chard I-product I-person
@@ -6986,7 +6986,7 @@ hyped O O
 and O O
 ready O O
 for O O
-#FlavaFridays O B-group
+#FlavaFridays O O
 tonight O O
 &lt; O O
 every O O
@@ -7021,7 +7021,7 @@ to O O
 school O O
 ^^ O O
 " O O
-HK O B-location
+HK O O
 can O O
 wait O O
 for O O
@@ -7108,8 +7108,8 @@ campaign O O
 [ O O
 AP O O
 : O O
-US O O
-News O O
+US O B-corporation
+News O I-corporation
 ] O O
 http://bzbx.us/uEf O O
 #50 O O
@@ -7150,7 +7150,7 @@ on O O
 Vs O B-group
 . O O
 the B-group O
-Lions I-group B-group
+Lions I-group O
 
 " O O
 before O O
@@ -7275,8 +7275,8 @@ Go O O
 Lions B-group B-group
 !! O O
 
-Business B-corporation O
-Alliance I-corporation O
+Business B-corporation B-corporation
+Alliance I-corporation I-corporation
 will O O
 save O O
 you O O
