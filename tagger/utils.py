@@ -82,8 +82,11 @@ def create_mapping(dico):
 def zero_digits(s):
     """
     Replace every digit in a string by a zero.
+    Bill: replace the url as well
     """
-    return re.sub('\d', '0', s)
+    s = re.sub(r'\w+:\/{2}[\d\w-]+(\.[\d\w-]+)*(?:(?:\/[^\s/]*))*', 'url_link', s)
+    s = re.sub('\d', '0', s)
+    return s
 
 
 def iob2(tags):
