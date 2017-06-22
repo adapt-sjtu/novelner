@@ -89,7 +89,6 @@ def evaluate(iterable, options=None):
     count=0
     for line in iterable:
         line = line.rstrip('\r\n')
-        print(count)
         count += 1
         if options.delimiter == ANY_SPACE:
             features = line.split()

@@ -45,7 +45,7 @@ festival O O
 cant O O
 wait O O
 4 O O
-GAC O B-creativework
+GAC O O
 2night O O
 ! O O
 an O O
@@ -324,8 +324,8 @@ my O O
 favorite O O
 . O O
 
-Anja B-person B-product
-Rubik I-person I-product
+Anja B-person B-person
+Rubik I-person I-person
 Model O O
 in O O
 Lingerie O O
@@ -845,7 +845,7 @@ just O O
 whooped O O
 st O O
 . O O
-francis O O
+francis O B-person
 preps O O
 asssss O O
 . O O
@@ -918,8 +918,8 @@ the O O
 day O O
 ! O O
 Happy O O
-Aloha O B-group
-Friday O I-group
+Aloha O O
+Friday O O
 !!! O O
 
 RT O O
@@ -2964,11 +2964,11 @@ Ill O O
 be O O
 at O O
 muse B-location B-location
-717 O I-location
+717 O B-location
 6th O O
-St O B-location
-Nw O I-location
-Dc O I-location
+St O O
+Nw O O
+Dc O O
 to O O
 party O O
 
@@ -3408,7 +3408,7 @@ bench O O
 tonight O O
 . O O
 Thought O O
-Rocks B-group O
+Rocks B-group B-group
 well O O
 in O O
 game O O
@@ -4105,7 +4105,7 @@ Games O O
 ' O O
 Vanquish B-product B-product
 for O O
-PS3 B-product B-product
+PS3 B-product O
 , O O
 Xbox B-product B-product
 360 I-product I-product
@@ -4265,7 +4265,7 @@ now O O
 . O O
 http://bit.ly/9k1L4N O O
 
-4Dbling B-person O
+4Dbling B-person B-person
 's O O
 place O O
 til O O
@@ -5529,7 +5529,7 @@ late O O
 - O O
 three O O
 days O O
-grace O B-person
+grace O O
 &lt; O O
 3 O O
 
@@ -5887,8 +5887,8 @@ performing O O
 tonight O O
 at O O
 8 O O
-Bond O B-location
-Street O I-location
+Bond O O
+Street O O
 in O O
 Soho B-location B-location
 . O O
@@ -6544,8 +6544,8 @@ Long I-location I-location
 Island I-location I-location
 ( O O
 138 O O
-West O B-location
-Ave O I-location
+West O O
+Ave O O
 , O O
 Patchogue) B-location B-location
 . O O
@@ -7242,8 +7242,8 @@ I O O
 'm O O
 staying O O
 in O O
-2day O B-location
-2 O I-location
+2day O O
+2 O O
 rest O O
 this O O
 week O O

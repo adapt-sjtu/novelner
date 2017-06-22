@@ -97,15 +97,21 @@ def cap_feature(s):
     2 = first letter caps
     3 = one capital (not first letter)
     """
+    tmp_state = 0
     if s.lower() == s:
-        return 0
+        tmp_state = 0
     elif s.upper() == s:
-        return 1
+        tmp_state = 1
     elif s[0].upper() == s[0]:
-        return 2
+        tmp_state = 2
     else:
-        return 3
-
+        tmp_state = 3
+    if s.startswith('@'):
+        tmp_state += 4
+    elif s.startswith('#'):
+        tmp_state += 8
+    #change the number in model.py to 12
+    return tmp_state
 
 def prepare_sentence(str_words, word_to_id, char_to_id, lower=False):
     """

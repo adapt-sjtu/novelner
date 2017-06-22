@@ -263,7 +263,7 @@ def evaluate(parameters, f_eval, raw_sentences, parsed_sentences,
     # Remove temp files
     # os.remove(output_path)
     # os.remove(scores_path)
-
+    '''
     # Confusion matrix with accuracy for each tag
     print ("{: >2}{: >7}{: >7}%s{: >9}" % ("{: >7}" * n_tags)).format(
         "ID", "NE", "Total",
@@ -275,7 +275,7 @@ def evaluate(parameters, f_eval, raw_sentences, parsed_sentences,
             *([count[i][j] for j in xrange(n_tags)] +
               ["%.3f" % (count[i][i] * 100. / max(1, count[i].sum()))])
         )
-
+    '''
     # Global accuracy
     print "%i/%i (%.5f%%)" % (
         count.trace(), count.sum(), 100. * count.trace() / max(1, count.sum())

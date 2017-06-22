@@ -133,7 +133,7 @@ class Model(object):
 
         # Number of capitalization features
         if cap_dim:
-            n_cap = 4
+            n_cap = 12
 
         # Network variables
         is_train = T.iscalar('is_train')
