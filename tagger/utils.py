@@ -248,7 +248,7 @@ def evaluate(parameters, f_eval, raw_sentences, parsed_sentences,
         predictions.append("")
 
     # Write predictions to disk and run CoNLL script externally
-    eval_id = np.random.randint(1000000, 2000000)
+    eval_id = 23333 
     output_path = os.path.join(eval_temp, "eval.%i.output" % eval_id)
     scores_path = os.path.join(eval_temp, "eval.%i.scores" % eval_id)
     with codecs.open(output_path, 'w', 'utf8') as f:
@@ -261,8 +261,8 @@ def evaluate(parameters, f_eval, raw_sentences, parsed_sentences,
         print line
 
     # Remove temp files
-    # os.remove(output_path)
-    # os.remove(scores_path)
+    os.remove(output_path)
+    os.remove(scores_path)
     '''
     # Confusion matrix with accuracy for each tag
     print ("{: >2}{: >7}{: >7}%s{: >9}" % ("{: >7}" * n_tags)).format(

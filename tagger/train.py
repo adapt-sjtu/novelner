@@ -206,28 +206,31 @@ best_dev = -np.inf
 best_test = -np.inf
 count = 0
 for epoch in xrange(n_epochs):
-    epoch_costs = []
-    print "Starting epoch %i..." % epoch
-    for i, index in enumerate(np.random.permutation(len(train_data))):
-        count += 1
-        input = create_input(train_data[index], parameters, True, singletons)
-        new_cost = f_train(*input)
-        epoch_costs.append(new_cost)
-        if i % 50 == 0 and i > 0 == 0:
-            print "%i, cost average: %f" % (i, np.mean(epoch_costs[-50:]))
-        if count % freq_eval == 0:
-            dev_score = evaluate(parameters, f_eval, dev_sentences,
-                                 dev_data, id_to_tag, dico_tags)
-            test_score = evaluate(parameters, f_eval, test_sentences,
-                                  test_data, id_to_tag, dico_tags)
-            print "Score on dev: %.5f" % dev_score
-            print "Score on test: %.5f" % test_score
-            if dev_score > best_dev:
-                best_dev = dev_score
-                print "New best score on dev."
-                print "Saving model to disk..."
-                model.save()
-            if test_score > best_test:
-                best_test = test_score
-                print "New best score on test."
-    print "Epoch %i done. Average cost: %f" % (epoch, np.mean(epoch_costs))
+    try:
+        epoch_costs = []
+        print "Starting epoch %i..." % epoch
+        for i, index in enumerate(np.random.permutation(len(train_data))):
+            count += 1
+            input = create_input(train_data[index], parameters, True, singletons)
+            new_cost = f_train(*input)
+            epoch_costs.append(new_cost)
+            if i % 50 == 0 and i > 0 == 0:
+                print "%i, cost average: %f" % (i, np.mean(epoch_costs[-50:]))
+            if count % freq_eval == 0:
+                dev_score = evaluate(parameters, f_eval, dev_sentences,
+                                     dev_data, id_to_tag, dico_tags)
+                #test_score = evaluate(parameters, f_eval, test_sentences,
+                #                      test_data, id_to_tag, dico_tags)
+                print "Score on dev: %.5f" % dev_score
+                #print "Score on test: %.5f" % test_score
+                if dev_score > best_dev:
+                    best_dev = dev_score
+                    print "New best score on dev."
+                    print "Saving model to disk..."
+                    model.save()
+                #if test_score > best_test:
+                #    best_test = test_score
+                #    print "New best score on test."
+        print "Epoch %i done. Average cost: %f" % (epoch, np.mean(epoch_costs))
+    except Exception as e:
+        print e
