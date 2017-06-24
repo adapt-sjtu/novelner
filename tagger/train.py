@@ -211,6 +211,7 @@ for epoch in xrange(n_epochs):
         print "Starting epoch %i..." % epoch
         for i, index in enumerate(np.random.permutation(len(train_data))):
             count += 1
+            non_increase = 1
             input = create_input(train_data[index], parameters, True, singletons)
             new_cost = f_train(*input)
             epoch_costs.append(new_cost)
@@ -222,15 +223,20 @@ for epoch in xrange(n_epochs):
                 #test_score = evaluate(parameters, f_eval, test_sentences,
                 #                      test_data, id_to_tag, dico_tags)
                 print "Score on dev: %.5f" % dev_score
+                
                 #print "Score on test: %.5f" % test_score
                 if dev_score > best_dev:
+                    non_increase = 1
                     best_dev = dev_score
                     print "New best score on dev."
                     print "Saving model to disk..."
                     model.save()
+                #if non_increase >= 20:
+                #    exit()
                 #if test_score > best_test:
                 #    best_test = test_score
                 #    print "New best score on test."
+                print "Best Score on dev: %.5f" % best_dev
         print "Epoch %i done. Average cost: %f" % (epoch, np.mean(epoch_costs))
     except Exception as e:
         print e
