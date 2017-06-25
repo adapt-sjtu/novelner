@@ -254,7 +254,7 @@ for epoch in xrange(n_epochs):
                                      dev_data, id_to_tag, dico_tags)
                 #test_score = evaluate(parameters, f_eval, test_sentences,
                 #                      test_data, id_to_tag, dico_tags)
-                print "Score on dev: %.5f" % dev_score
+                print "Score on dev: %.5f ; Now epoch is %i" %(dev_score,epoch)
                 
                 #print "Score on test: %.5f" % test_score
                 if dev_score > best_dev:
@@ -267,7 +267,7 @@ for epoch in xrange(n_epochs):
                 #if test_score > best_test:
                 #    best_test = test_score
                 #    print "New best score on test."
-                print "Best Score on dev: %.5f and non_increase_epoch=%d" % (best_dev, non_increase)
+                print "Best Score on dev: %.5f and non_increase_epoch=%i" % (best_dev, non_increase)
                 # if non_increase >= 20:
                 #    exit()
         non_increase += 1
