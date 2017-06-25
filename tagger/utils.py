@@ -212,8 +212,16 @@ def create_input(data, parameters, add_label, singletons=None):
         if parameters['char_bidirect']:
             input.append(char_rev)
         input.append(char_pos)
+
     if parameters['pos_dim']:
         input.append(data['postags'])
+    if parameters['dep_dim']:
+        input.append(data['deps'])
+    if parameters['ind_dim']:
+        input.append(data['inds'])
+    if parameters['head_dim']:
+        input.append(data['heads'])
+
     if parameters['cap_dim']:
         input.append(caps)
     if add_label:

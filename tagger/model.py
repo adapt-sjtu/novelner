@@ -49,7 +49,7 @@ class Model(object):
             self.reload_mappings()
         self.components = {}
 
-    def save_mappings(self, id_to_word, id_to_char, id_to_tag, id_to_postag):
+    def save_mappings(self, id_to_word, id_to_char, id_to_tag, id_to_postag, id_to_dep, id_to_ind, id_to_head):
         """
         We need to save the mappings if we want to use the model later.
         """
@@ -57,12 +57,16 @@ class Model(object):
         self.id_to_char = id_to_char
         self.id_to_tag = id_to_tag
         self.id_to_postag = id_to_postag
+        self.id_to_dep = id_to_dep
+        self.id_to_ind = id_to_ind
+        self.id_to_head = id_to_head
+
         with open(self.mappings_path, 'wb') as f:
             mappings = {
                 'id_to_word': self.id_to_word,
                 'id_to_char': self.id_to_char,
                 'id_to_tag': self.id_to_tag,
-                'id_to_postag': self.id_to_postag
+                'id_to_postag': self.id_to_postag, 'id_to_dep': self.id_to_dep,'id_to_ind': self.id_to_ind, 'id_to_head':self.id_to_head
             }
             cPickle.dump(mappings, f)
 
@@ -75,6 +79,10 @@ class Model(object):
         self.id_to_word = mappings['id_to_word']
         self.id_to_char = mappings['id_to_char']
         self.id_to_tag = mappings['id_to_tag']
+        self.id_to_postag = mappings['id_to_postag']
+        self.id_to_dep = mappings['id_to_dep']
+        self.id_to_ind = mappings['id_to_ind']
+        self.id_to_head = mappings['id_to_head']
 
     def add_component(self, param):
         """
@@ -117,6 +125,9 @@ class Model(object):
               char_bidirect,
               word_dim,
               pos_dim,
+              dep_dim,
+              ind_dim,
+              head_dim,
               word_lstm_dim,
               word_bidirect,
               lr_method,
@@ -134,6 +145,9 @@ class Model(object):
         n_chars = len(self.id_to_char)
         n_tags = len(self.id_to_tag)
         n_postags = len(self.id_to_postag)
+        n_deps = len(self.id_to_dep)
+        n_inds = len(self.id_to_ind)
+        n_heads = len(self.id_to_head)
         # Number of capitalization features
         if cap_dim:
             n_cap = 12
@@ -141,11 +155,14 @@ class Model(object):
         # Network variables
         is_train = T.iscalar('is_train')
         word_ids = T.ivector(name='word_ids')
-        postag_ids = T.ivector(name='postag_ids')
         char_for_ids = T.imatrix(name='char_for_ids')
         char_rev_ids = T.imatrix(name='char_rev_ids')
         char_pos_ids = T.ivector(name='char_pos_ids')
         tag_ids = T.ivector(name='tag_ids')
+        postag_ids = T.ivector(name='postag_ids')
+        dep_ids = T.ivector(name='dep_ids')
+        ind_ids = T.ivector(name='ind_ids')
+        head_ids = T.ivector(name='head_ids')
         if cap_dim:
             cap_ids = T.ivector(name='cap_ids')
 
@@ -244,7 +261,30 @@ class Model(object):
             input_dim += pos_dim 
             postag_layer = EmbeddingLayer(n_postags, pos_dim, name='postag_layer')
             inputs.append(postag_layer.link(postag_ids))
+        #
+        # Deo Tag feature
+        #
 
+        if dep_dim:
+            input_dim += dep_dim
+            dep_layer = EmbeddingLayer(n_deps, dep_dim, name='dep_layer')
+            inputs.append(dep_layer.link(dep_ids))
+        #
+        # Ind Tag feature
+        #
+
+        if ind_dim:
+            input_dim += ind_dim
+            ind_layer = EmbeddingLayer(n_inds, ind_dim, name='ind_layer')
+            inputs.append(ind_layer.link(ind_ids))
+        #
+        # Head Tag feature
+        #
+
+        if head_dim:
+            input_dim += head_dim
+            head_layer = EmbeddingLayer(n_heads, head_dim, name='head_layer')
+            inputs.append(head_layer.link(head_ids))
 
 
         #
@@ -366,8 +406,16 @@ class Model(object):
             if char_bidirect:
                 eval_inputs.append(char_rev_ids)
             eval_inputs.append(char_pos_ids)
+
         if pos_dim:
             eval_inputs.append(postag_ids)
+        if dep_dim:
+            eval_inputs.append(dep_ids)
+        if ind_dim:
+            eval_inputs.append(ind_ids)
+        if head_dim:
+            eval_inputs.append(head_ids)
+
         if cap_dim:
             eval_inputs.append(cap_ids)
         train_inputs = eval_inputs + [tag_ids]

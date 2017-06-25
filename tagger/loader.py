@@ -102,6 +102,39 @@ def pos_mapping(sentences):
     return dico, tag_to_id, id_to_tag
 
 
+def dep_mapping(sentences):
+    """
+    Create a dictionary and a mapping of dep tags, sorted by frequency.
+    """
+    tags = [[word[4] for word in s] for s in sentences]
+    dico = create_dico(tags)
+    tag_to_id, id_to_tag = create_mapping(dico)
+    print "Found %i unique Dependency Role tags" % len(dico)
+    return dico, tag_to_id, id_to_tag
+
+
+def ind_mapping(sentences):
+    """
+    Create a dictionary and a mapping of ind tags, sorted by frequency.
+    """
+    tags = [[word[1] for word in s] for s in sentences]
+    dico = create_dico(tags)
+    tag_to_id, id_to_tag = create_mapping(dico)
+    print "Found %i unique token Index tags" % len(dico)
+    return dico, tag_to_id, id_to_tag
+
+
+def head_mapping(sentences):
+    """
+    Create a dictionary and a mapping of head tags, sorted by frequency.
+    """
+    tags = [[word[3] for word in s] for s in sentences]
+    dico = create_dico(tags)
+    tag_to_id, id_to_tag = create_mapping(dico)
+    print "Found %i unique Head index tags" % len(dico)
+    return dico, tag_to_id, id_to_tag
+
+
 def cap_feature(s):
     """
     Capitalization feature:
@@ -145,7 +178,7 @@ def prepare_sentence(str_words, word_to_id, char_to_id, lower=False):
     }
 
 
-def prepare_dataset(sentences, word_to_id, char_to_id, tag_to_id, postag_to_id, lower=False):
+def prepare_dataset(sentences, word_to_id, char_to_id, tag_to_id, postag_to_id, postag_to_id, dep_to_id, ind_to_id, head_to_id , lower=False):
     """
     Prepare the dataset. Return a list of lists of dictionaries containing:
         - word indexes
@@ -163,14 +196,19 @@ def prepare_dataset(sentences, word_to_id, char_to_id, tag_to_id, postag_to_id, 
                  for w in str_words]
         caps = [cap_feature(w) for w in str_words]
         tags = [tag_to_id[w[-1]] for w in s]
+
         postags = [postag_to_id[w[2]] for w in s]
+        deps = [dep_to_id[w[4]] for w in s]
+        inds = [ind_to_id[w[1]] for w in s]
+        heads = [head_to_id[w[3]] for w in s]
+
         data.append({
             'str_words': str_words,
             'words': words,
             'chars': chars,
             'caps': caps,
             'tags': tags,
-            'postags': postags,
+            'postags': postags, 'deps': deps, 'inds': inds, 'heads': heads,
         })
     return data
 
