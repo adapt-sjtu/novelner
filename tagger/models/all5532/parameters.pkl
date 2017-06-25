@@ -38,7 +38,7 @@ aI5
 aa(lp20
 S'dep_dim'
 p21
-aI5
+aI1
 aa(lp22
 S'ind_dim'
 p23

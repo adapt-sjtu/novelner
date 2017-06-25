@@ -132,7 +132,7 @@ def head_mapping(sentences):
     Create a dictionary and a mapping of head tags, sorted by frequency.
     """
     tags = [[word[3] for word in s] for s in sentences]
-    dico = crpate_dico(tags)
+    dico = create_dico(tags)
     dico['MAX'] = 10000000 
     print dico
     tag_to_id, id_to_tag = create_mapping(dico)
