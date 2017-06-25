@@ -59,12 +59,12 @@ def create_alphabets(alphabet_directory, data_paths, max_vocabulary_size, min_oc
                         continue
 
                     tokens = line.split('\t')
-                    for char in tokens[1]:
+                    for char in tokens[0]:
                         char_alphabet.add(char)
 
-                    word = DIGIT_RE.sub(b"0", tokens[1]) if normalize_digits else tokens[1]
-                    pos = tokens[4]
-                    type = tokens[7]
+                    word = DIGIT_RE.sub(b"0", tokens[0]) if normalize_digits else tokens[0]
+                    pos = tokens[2]
+                    type = tokens[-1]
 
                     pos_alphabet.add(pos)
                     type_alphabet.add(type)
