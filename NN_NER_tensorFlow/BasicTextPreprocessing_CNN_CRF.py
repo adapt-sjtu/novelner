@@ -55,7 +55,7 @@ tf.flags.DEFINE_integer("n_hidden_LSTM", 50, "Number of hidden units in LSTM (de
 tf.flags.DEFINE_integer("num_epochs", 100, "Number of training epochs (default: 200)")
 tf.flags.DEFINE_integer("num_filters", 10, "Number of filters to apply for char CNN (default: 30)")
 tf.flags.DEFINE_integer("filter_size", 3, "filter_size (default: 3 )")
-tf.flags.DEFINE_integer("evaluate_every", 300, "Evaluate model on dev set after this many steps (default: 100)")
+tf.flags.DEFINE_integer("evaluate_every", 50, "Evaluate model on dev set after this many steps (default: 100)")
 tf.flags.DEFINE_integer("char_embedd_dim", 10, "char_embedd_dim(default: 30)")
 tf.flags.DEFINE_integer("Optimizer", 1, "Adam : 1 , SGD:2")
 tf.flags.DEFINE_integer("num_checkpoints", 5, "Number of checkpoints to store (default: 5)")
@@ -309,19 +309,19 @@ with tf.Session(config=session_conf) as sess:
                 best_accuracy = accuracy_low_classes
                 best_step = current_step
                 best_overall_accuracy = new_accuracy
-                print("Saved model checkpoint to {}\n".format(path))
+                print("New Best Dev Model: Saved model checkpoint to {}\n".format(path))
                 #run test data
-                new_accuracy_test,accuracy_low_classes_test = af.test_step(logger= logger,session=sess,BiLSTM=BiLSTM,PadZeroBegin=FLAGS.PadZeroBegin,max_length=max_length,
-                    test_path=test_path,dropout_keep_prob=FLAGS.dropout_keep_prob,step=current_step,out_dir=out_dir,char_alphabet=char_alphabet,
-                    label_alphabet=label_alphabet,word_alphabet=word_alphabet,word_column=word_column,label_column=label_column,
-                    char_embedd_dim=FLAGS.char_embedd_dim,max_char_per_word=max_char_per_word)
-                if (accuracy_low_classes_test > best_accuracy_test):
-                    best_accuracy_test = accuracy_low_classes_test
-                    best_step_test = current_step
-                    best_overall_accuracy_test = new_accuracy_test
+                #new_accuracy_test,accuracy_low_classes_test = af.test_step(logger= logger,session=sess,BiLSTM=BiLSTM,PadZeroBegin=FLAGS.PadZeroBegin,max_length=max_length,
+                #    test_path=test_path,dropout_keep_prob=FLAGS.dropout_keep_prob,step=current_step,out_dir=out_dir,char_alphabet=char_alphabet,
+                #    label_alphabet=label_alphabet,word_alphabet=word_alphabet,word_column=word_column,label_column=label_column,
+                #    char_embedd_dim=FLAGS.char_embedd_dim,max_char_per_word=max_char_per_word)
+                #if (accuracy_low_classes_test > best_accuracy_test):
+                #    best_accuracy_test = accuracy_low_classes_test
+                #    best_step_test = current_step
+                #    best_overall_accuracy_test = new_accuracy_test
 
     print("DEV: best_accuracy on NER : %f best_step: %d best_overall_accuracy: %d" %(best_accuracy,best_step,best_overall_accuracy))
-    print("TEST : best_accuracy on NER : %f best_step: %d best_overall_accuracy: %d" %(best_accuracy_test,best_step_test,best_overall_accuracy_test))
+    #print("TEST : best_accuracy on NER : %f best_step: %d best_overall_accuracy: %d" %(best_accuracy_test,best_step_test,best_overall_accuracy_test))
 
 
 

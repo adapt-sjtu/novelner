@@ -95,8 +95,8 @@ def predictAccuracyAndWrite(logits,transition_params,seq_length,y_batch,step,x_b
                 # Evaluate word-level accuracy.
                 correct_labels += np.sum(np.equal(viterbi_sequence, y_))
                 total_labels += sequence_length_  
-            accuracy = 100.0 * correct_labels / float(total_labels)
-            accuracy_low_classes = 100.0 * correct_labels_low_classes / float(total_labels_low_classes)
+            accuracy = 100.0 * correct_labels / float(total_labels+1)
+            accuracy_low_classes = 100.0 * correct_labels_low_classes / float(total_labels_low_classes+1) 
             outfile.write("accuracy: " + str(accuracy))
             outfile.write("\naccuracy for classes except other : " + str(accuracy_low_classes))
             outfile.write("\ntotal other classes : {}, correctly predicted : {}  ".format(total_labels_low_classes,correct_labels_low_classes ))
