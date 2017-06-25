@@ -84,7 +84,8 @@ def zero_digits(s):
     Replace every digit in a string by a zero.
     Bill: replace the url as well
     """
-    s = re.sub('\d', '0', s)
+    sep = s.find('\t')
+    s = re.sub('\d', '0', s[0:sep])+s[sep:]
     s = re.sub(r'\w+:\/{2}[\d\w-]+(\.[\d\w-]+)*(?:(?:\/[^\s/]*))*', '1', s)
     return s
 
