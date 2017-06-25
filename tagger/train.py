@@ -206,10 +206,10 @@ train_data = prepare_dataset(
     train_sentences, word_to_id, char_to_id, tag_to_id, postag_to_id, dep_to_id, ind_to_id, head_to_id, lower
 )
 dev_data = prepare_dataset(
-    dev_sentences, word_to_id, char_to_id, tag_to_id, postag_to_id, postag_to_id, dep_to_id, ind_to_id, head_to_id, lower
+    dev_sentences, word_to_id, char_to_id, tag_to_id, postag_to_id, dep_to_id, ind_to_id, head_to_id, lower
 )
 test_data = prepare_dataset(
-    test_sentences, word_to_id, char_to_id, tag_to_id, postag_to_id, postag_to_id, dep_to_id, ind_to_id, head_to_id, lower
+    test_sentences, word_to_id, char_to_id, tag_to_id,postag_to_id, dep_to_id, ind_to_id, head_to_id, lower
 )
 
 print "%i / %i / %i sentences in train / dev / test." % (
