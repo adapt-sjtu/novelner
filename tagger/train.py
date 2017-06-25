@@ -73,6 +73,9 @@ optparser.add_option(
     "-H", "--head_dim", default="0",
     type='int', help="head index embedding dimension"
 )# Bill: here add a pos tag dimension
+optparser.add_option(
+    "-N", "--model_path", default="", help="the path of the model"
+)# Bill: here add a pos tag dimension
 ############################################
 optparser.add_option(
     "-W", "--word_lstm_dim", default="100",
@@ -126,6 +129,7 @@ parameters['pos_dim'] = opts.pos_dim # Bill: here add a hyper-parameter
 parameters['dep_dim'] = opts.dep_dim # Bill: here add a hyper-parameter
 parameters['ind_dim'] = opts.ind_dim # Bill: here add a hyper-parameter
 parameters['head_dim'] = opts.head_dim # Bill: here add a hyper-parameter
+parameters['model_path'] = opts.model_path
 ########################################
 parameters['word_lstm_dim'] = opts.word_lstm_dim
 parameters['word_bidirect'] = opts.word_bidirect == 1

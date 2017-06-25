@@ -28,6 +28,7 @@ class Model(object):
             self.name = get_name(parameters)
             # Model location
             model_path = os.path.join(models_path, self.name)
+            model_path = parameters['model_path']
             self.model_path = model_path
             self.parameters_path = os.path.join(model_path, 'parameters.pkl')
             self.mappings_path = os.path.join(model_path, 'mappings.pkl')
