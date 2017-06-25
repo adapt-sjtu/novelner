@@ -31,7 +31,7 @@ label_name ="ner"
 label_alphabet = Alphabet(label_name)
 logger = utils.get_logger("MainCode")
 embedding = "glove"
-embedding_path = "/home/zhiyi/data/glove.twitter.27B.100d.gz" # "glove.6B.100d.gz"
+embedding_path = "/home/yuchen/useful_data/glove.twitter.27B.100d.gz" # "glove.6B.100d.gz"
 
 
 
@@ -39,9 +39,9 @@ oov = 'embedding'
 fine_tune = True
 # Model Hyperparameters
 #tf.flags.DEFINE_integer("embedding_dim", 128, "Dimensionality of character embedding (default: 128)") #not used
-tf.flags.DEFINE_string("train_path", "../2016data/train", "Train Path") # eng.train.iobes.act
-tf.flags.DEFINE_string("test_path", "../2016data/test", "Test Path")  # eng.testa.iobes.act
-tf.flags.DEFINE_string("dev_path", "../2016data/dev", "dev Path") # eng.testb.iobes.act
+tf.flags.DEFINE_string("train_path", "../final_data/train.final.featured", "Train Path") # eng.train.iobes.act
+tf.flags.DEFINE_string("test_path", "../final_data/test.final", "Test Path")  # eng.testa.iobes.act
+tf.flags.DEFINE_string("dev_path", "../final_data/dev.final.featured", "dev Path") # eng.testb.iobes.act
 tf.flags.DEFINE_float("dropout_keep_prob", 0.5, "Dropout keep probability (default: 0.5)")
 tf.flags.DEFINE_float("grad_clip", 5, "value for gradient clipping to avoid exploding/vanishing gradient(default: 5.0) in LSTM")
 tf.flags.DEFINE_float("max_global_clip", 5.0, "value for gradient clipping to avoid exploding/vanishing gradient overall(default: 1.0)")
@@ -50,9 +50,9 @@ tf.flags.DEFINE_float("max_global_clip", 5.0, "value for gradient clipping to av
 # Training parameters
 tf.flags.DEFINE_integer("batch_size", 10, "Batch Size (default: 64)")
 tf.flags.DEFINE_integer("word_col", 0, "position of the word in input file (default: 0)")
-tf.flags.DEFINE_integer("label_col", 1, "position of the label in input file (default: 3)")
+tf.flags.DEFINE_integer("label_col", 5, "position of the label in input file (default: 3)")
 tf.flags.DEFINE_integer("n_hidden_LSTM", 50, "Number of hidden units in LSTM (default: 200)")
-tf.flags.DEFINE_integer("num_epochs", 30, "Number of training epochs (default: 200)")
+tf.flags.DEFINE_integer("num_epochs", 100, "Number of training epochs (default: 200)")
 tf.flags.DEFINE_integer("num_filters", 10, "Number of filters to apply for char CNN (default: 30)")
 tf.flags.DEFINE_integer("filter_size", 3, "filter_size (default: 3 )")
 tf.flags.DEFINE_integer("evaluate_every", 300, "Evaluate model on dev set after this many steps (default: 100)")

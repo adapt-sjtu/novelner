@@ -194,7 +194,7 @@ def build_network(word_var, char_var, mask_var, word_alphabet, char_alphabet, dr
         layer_char_embedding = lasagne.layers.DimshuffleLayer(layer_char_embedding, pattern=(0, 1, 3, 2))
         return layer_char_embedding
 
-    embedd_dict, embedd_dim, caseless = utils.load_word_embedding_dict('glove', "data/glove/glove.6B/glove.6B.100d.gz")
+    embedd_dict, embedd_dim, caseless = utils.load_word_embedding_dict('glove', "/home/yuchen/useful_data/glove.twitter.27B.100d.txt.gz")
     assert embedd_dim == WORD_DIM
 
     word_table = construct_word_embedding_table()
@@ -217,7 +217,7 @@ def build_network(word_var, char_var, mask_var, word_alphabet, char_alphabet, dr
 def main():
     parser = argparse.ArgumentParser(description='Tuning with bi-directional LSTM-CNN-CRF')
     parser.add_argument('--num_epochs', type=int, default=1000, help='Number of training epochs')
-    parser.add_argument('--batch_size', type=int, default=10, help='Number of sentences in each batch')
+    parser.add_argument('--batch_size', type=int, default=30, help='Number of sentences in each batch')
     parser.add_argument('--num_units', type=int, default=100, help='Number of hidden units in LSTM')
     parser.add_argument('--num_filters', type=int, default=20, help='Number of filters in CNN')
     parser.add_argument('--learning_rate', type=float, default=0.1, help='Learning rate')
@@ -263,6 +263,7 @@ def main():
     logger.info("Word Alphabet Size: %d" % word_alphabet.size())
     logger.info("Character Alphabet Size: %d" % char_alphabet.size())
     logger.info("POS Alphabet Size: %d" % pos_alphabet.size())
+    logger.info("Final Tag Alphabet Size: %d" % type_alphabet.size())
 
     num_labels = pos_alphabet.size() - 1
 

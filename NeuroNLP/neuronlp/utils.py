@@ -36,6 +36,8 @@ def load_word_embedding_dict(embedding, embedding_path, normalize_digits=True):
                     continue
 
                 tokens = line.split()
+                if len(tokens) <101:
+                    continue
                 if embedd_dim < 0:
                     embedd_dim = len(tokens) - 1
                 else:
