@@ -241,9 +241,9 @@ class Model(object):
         #
 
         if pos_dim:
-            input_dim += word_dim
+            input_dim += pos_dim 
             postag_layer = EmbeddingLayer(n_postags, pos_dim, name='postag_layer')
-            inputs.append(word_layer.link(postag_ids))
+            inputs.append(postag_layer.link(postag_ids))
 
 
 
@@ -366,6 +366,8 @@ class Model(object):
             if char_bidirect:
                 eval_inputs.append(char_rev_ids)
             eval_inputs.append(char_pos_ids)
+        if pos_dim:
+            eval_inputs.append(postag_ids)
         if cap_dim:
             eval_inputs.append(cap_ids)
         train_inputs = eval_inputs + [tag_ids]

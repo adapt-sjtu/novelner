@@ -246,3 +246,4 @@ for epoch in xrange(n_epochs):
         print "Epoch %i done. Average cost: %f" % (epoch, np.mean(epoch_costs))
     except Exception as e:
         print e
+        raise

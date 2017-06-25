@@ -21,7 +21,9 @@ def load_sentences(path, lower, zeros):
                 sentence = []
         else:
             word = line.split()
-            assert len(word) >= 2
+            if len(word)<6:
+                print line
+            assert len(word) == 6
             sentence.append(word)
     if len(sentence) > 0:
         if 'DOCSTART' not in sentence[0][0]:
