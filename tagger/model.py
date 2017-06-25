@@ -49,18 +49,20 @@ class Model(object):
             self.reload_mappings()
         self.components = {}
 
-    def save_mappings(self, id_to_word, id_to_char, id_to_tag):
+    def save_mappings(self, id_to_word, id_to_char, id_to_tag, id_to_postag):
         """
         We need to save the mappings if we want to use the model later.
         """
         self.id_to_word = id_to_word
         self.id_to_char = id_to_char
         self.id_to_tag = id_to_tag
+        self.id_to_postag = id_to_postag
         with open(self.mappings_path, 'wb') as f:
             mappings = {
                 'id_to_word': self.id_to_word,
                 'id_to_char': self.id_to_char,
                 'id_to_tag': self.id_to_tag,
+                'id_to_postag': self.id_to_postag
             }
             cPickle.dump(mappings, f)
 
@@ -114,6 +116,7 @@ class Model(object):
               char_lstm_dim,
               char_bidirect,
               word_dim,
+              pos_dim,
               word_lstm_dim,
               word_bidirect,
               lr_method,
@@ -130,7 +133,7 @@ class Model(object):
         n_words = len(self.id_to_word)
         n_chars = len(self.id_to_char)
         n_tags = len(self.id_to_tag)
-
+        n_postags = len(self.id_to_postag)
         # Number of capitalization features
         if cap_dim:
             n_cap = 12
@@ -138,6 +141,7 @@ class Model(object):
         # Network variables
         is_train = T.iscalar('is_train')
         word_ids = T.ivector(name='word_ids')
+        postag_ids = T.ivector(name='postag_ids')
         char_for_ids = T.imatrix(name='char_for_ids')
         char_rev_ids = T.imatrix(name='char_rev_ids')
         char_pos_ids = T.ivector(name='char_pos_ids')
@@ -231,6 +235,17 @@ class Model(object):
             if char_bidirect:
                 inputs.append(char_rev_output)
                 input_dim += char_lstm_dim
+
+        #
+        # Pos Tag feature
+        #
+
+        if pos_dim:
+            input_dim += word_dim
+            postag_layer = EmbeddingLayer(n_postags, pos_dim, name='postag_layer')
+            inputs.append(word_layer.link(postag_ids))
+
+
 
         #
         # Capitalization feature

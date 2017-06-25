@@ -9,7 +9,7 @@ from utils import create_input
 import loader
 
 from utils import models_path, evaluate, eval_script, eval_temp
-from loader import word_mapping, char_mapping, tag_mapping
+from loader import word_mapping, char_mapping, tag_mapping,pos_mapping
 from loader import update_tag_scheme, prepare_dataset
 from loader import augment_with_pretrained
 from model import Model
@@ -57,6 +57,10 @@ optparser.add_option(
     type='int', help="Token embedding dimension"
 )
 optparser.add_option(
+    "-P", "--pos_dim", default="0",
+    type='int', help="POS Tag embedding dimension"
+)# Bill: here add a pos tag dimension
+optparser.add_option(
     "-W", "--word_lstm_dim", default="100",
     type='int', help="Token LSTM hidden layer size"
 )
@@ -103,6 +107,7 @@ parameters['char_dim'] = opts.char_dim
 parameters['char_lstm_dim'] = opts.char_lstm_dim
 parameters['char_bidirect'] = opts.char_bidirect == 1
 parameters['word_dim'] = opts.word_dim
+parameters['pos_dim'] = opts.pos_dim # Bill: here add a hyper-parameter
 parameters['word_lstm_dim'] = opts.word_lstm_dim
 parameters['word_bidirect'] = opts.word_bidirect == 1
 parameters['pre_emb'] = opts.pre_emb
@@ -168,16 +173,17 @@ else:
 # Create a dictionary and a mapping for words / POS tags / tags
 dico_chars, char_to_id, id_to_char = char_mapping(train_sentences)
 dico_tags, tag_to_id, id_to_tag = tag_mapping(train_sentences)
+dico_postags, postag_to_id, id_to_postag = pos_mapping(train_sentences)
 
 # Index data
 train_data = prepare_dataset(
-    train_sentences, word_to_id, char_to_id, tag_to_id, lower
+    train_sentences, word_to_id, char_to_id, tag_to_id, postag_to_id, lower
 )
 dev_data = prepare_dataset(
-    dev_sentences, word_to_id, char_to_id, tag_to_id, lower
+    dev_sentences, word_to_id, char_to_id, tag_to_id, postag_to_id, lower
 )
 test_data = prepare_dataset(
-    test_sentences, word_to_id, char_to_id, tag_to_id, lower
+    test_sentences, word_to_id, char_to_id, tag_to_id, postag_to_id, lower
 )
 
 print "%i / %i / %i sentences in train / dev / test." % (
@@ -185,7 +191,7 @@ print "%i / %i / %i sentences in train / dev / test." % (
 
 # Save the mappings to disk
 print 'Saving the mappings to disk...'
-model.save_mappings(id_to_word, id_to_char, id_to_tag)
+model.save_mappings(id_to_word, id_to_char, id_to_tag, postag_to_id)
 
 # Build the model
 f_train, f_eval = model.build(**parameters)
