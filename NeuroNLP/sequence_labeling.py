@@ -217,7 +217,7 @@ def build_network(word_var, char_var, mask_var, word_alphabet, char_alphabet, dr
 def main():
     parser = argparse.ArgumentParser(description='Tuning with bi-directional LSTM-CNN-CRF')
     parser.add_argument('--num_epochs', type=int, default=1000, help='Number of training epochs')
-    parser.add_argument('--batch_size', type=int, default=10, help='Number of sentences in each batch')
+    parser.add_argument('--batch_size', type=int, default=30, help='Number of sentences in each batch')
     parser.add_argument('--num_units', type=int, default=100, help='Number of hidden units in LSTM')
     parser.add_argument('--num_filters', type=int, default=20, help='Number of filters in CNN')
     parser.add_argument('--learning_rate', type=float, default=0.1, help='Learning rate')
