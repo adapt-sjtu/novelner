@@ -178,7 +178,7 @@ def prepare_sentence(str_words, word_to_id, char_to_id, lower=False):
     }
 
 
-def prepare_dataset(sentences, word_to_id, char_to_id, tag_to_id, postag_to_id, postag_to_id, dep_to_id, ind_to_id, head_to_id , lower=False):
+def prepare_dataset(sentences, word_to_id, char_to_id, tag_to_id, postag_to_id, dep_to_id, ind_to_id, head_to_id , lower=False):
     """
     Prepare the dataset. Return a list of lists of dictionaries containing:
         - word indexes
