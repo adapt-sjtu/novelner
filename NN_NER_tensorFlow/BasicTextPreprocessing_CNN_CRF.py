@@ -31,7 +31,7 @@ label_name ="ner"
 label_alphabet = Alphabet(label_name)
 logger = utils.get_logger("MainCode")
 embedding = "glove"
-embedding_path = "/home/yuchen/useful_data/glove.twitter.27B.100d.gz" # "glove.6B.100d.gz"
+embedding_path = "/home/yuchen/useful_data/glove.twitter.27B.100d.txt.gz" # "glove.6B.100d.gz"
 
 
 
