@@ -77,13 +77,13 @@ GOOD O O
 trump B-person B-person
 is O O
 the O O
-Kremlin O B-product
+Kremlin O B-group
 ' O O
 s O O
 boy O O
 
-Hobby B-person O
-frog I-person O
+Hobby B-person B-creativework
+frog I-person I-creativework
 is O O
 a O O
 savege O O
@@ -257,7 +257,7 @@ t O O
 support O O
 for O O
 Donald B-person B-person
-trump I-person O
+trump I-person I-person
 if O O
 I O O
 get O O
@@ -321,7 +321,7 @@ Numbers I-creativework O
 
 12 O O
 : O O
-46 O B-person
+46 O O
 is O O
 it O O
 just O O
@@ -397,8 +397,8 @@ again O O
 
 hhaahaa O O
 😂 O O
-😂 O B-person
-martin B-person I-person
+😂 O O
+martin B-person O
 short I-person O
 great O O
 ! O O
@@ -433,8 +433,8 @@ I O O
 love O O
 the O O
 cute O O
-Lil B-person O
-Darth I-person B-person
+Lil B-person B-person
+Darth I-person I-person
 Vader I-person I-person
 kitten O O
 ! O O
@@ -446,7 +446,7 @@ proud O O
 ND B-location O
 happy O O
 ki O O
-Punjabiya O B-person
+Punjabiya O O
 toh O O
 zada O O
 vadiya O O
@@ -547,7 +547,7 @@ detective O O
 . O O
 
 If O O
-Roman B-person B-person
+Roman B-person O
 made O O
 a O O
 new O O
@@ -629,11 +629,11 @@ out O O
 . O O
 THANK O O
 YOU O O
-JINX B-person O
+JINX B-person B-person
 
 That O O
-rick B-person O
-roll O O
+rick B-person B-person
+roll O I-person
 was O O
 so O O
 good O O
@@ -642,8 +642,8 @@ XD O O
 I O O
 love O O
 the O O
-Canadian B-location O
-Pokemon B-creativework O
+Canadian B-location B-creativework
+Pokemon B-creativework I-creativework
 characters O O
 😂 O O
 😂 O O
@@ -867,7 +867,7 @@ and O O
 Demeyere B-product B-person
 are O O
 the O O
-Ferrari B-product B-product
+Ferrari B-product B-person
 ' I-product O
 s I-product O
 of O O
@@ -907,8 +907,8 @@ Oregon B-location B-location
 from O O
 Troutdale B-location B-location
 ( O O
-east B-location B-location
-portland I-location I-location
+east B-location O
+portland I-location B-location
 ) O O
 , O O
 enjoy O O
@@ -953,7 +953,7 @@ do O O
 you O O
 have O O
 267 O O
-K O O
+K O B-person
 subs O O
 and O O
 ZERO O O
@@ -983,7 +983,7 @@ orchard B-location B-location
 academy I-location I-location
 in O O
 milton B-location B-location
-keyons I-location I-location
+keyons I-location O
 
 when O O
 people O O
@@ -1023,7 +1023,7 @@ puppies O O
 . O O
 
 Kimmel B-person B-person
-2015 O O
+2015 O I-person
 ? O O
 
 The O O
@@ -1071,7 +1071,7 @@ S B-product O
 8 I-product O
 . O O
 
-ZWEIBRUCKEN B-location O
+ZWEIBRUCKEN B-location B-location
 ! O O
 I O O
 lived O O
@@ -1155,7 +1155,7 @@ forever O O
 to O O
 find O O
 the O O
-Toyota B-product B-location
+Toyota B-product B-corporation
 from O O
 your O O
 thumbnail O O
@@ -1173,7 +1173,7 @@ it O O
 ! O O
 
 My O O
-cousin O O
+cousin O B-person
 is O O
 Tyler B-person B-person
 Boyd I-person I-person
@@ -1205,13 +1205,13 @@ Jimmy B-person B-person
 xD O O
 
 Ledger B-person B-person
-> O O
-> O O
-> O O
-> O O
-> O O
-Every O B-creativework
-Joker B-person I-creativework
+> O I-person
+> O I-person
+> O I-person
+> O I-person
+> O I-person
+Every O I-person
+Joker B-person I-person
 ever O O
 
 I O O
@@ -1389,7 +1389,7 @@ a O O
 minecraft B-product O
 gamer O O
 and O O
-grian B-person B-person
+grian B-person O
 fan O O
 so O O
 i O O
@@ -1426,7 +1426,7 @@ it O O
 
 WAS O O
 THAT O O
-ELEKTRA B-person B-corporation
+ELEKTRA B-person B-product
 ! O O
 ! O O
 ! O O
@@ -1439,7 +1439,7 @@ like O O
 a O O
 style O O
 is O O
-Evi B-person O
+Evi B-person B-location
 
 Stop O O
 singing O O
@@ -1489,7 +1489,7 @@ will O O
 be O O
 cheering O O
 a O O
-trump B-person B-person
+trump B-person O
 impersonator O O
 . O O
 People O O
@@ -1518,7 +1518,7 @@ its O O
 awsome O O
 
 Is O O
-tamina B-person O
+tamina B-person B-person
 heel O O
 or O O
 face O O
@@ -1526,7 +1526,7 @@ face O O
 ? O O
 ? O O
 
-Willies B-person O
+Willies B-person B-group
 music O O
 , O O
 the O O
@@ -1569,9 +1569,9 @@ reabeating O O
 it O O
 . O O
 
-Jar B-person O
-jar I-person O
-binx I-person O
+Jar B-person B-product
+jar I-person I-product
+binx I-person B-person
 is O O
 a O O
 dic O O
@@ -1633,14 +1633,14 @@ to O O
 sitaram B-person O
 katel I-person O
 and O O
-kunjana B-person O
+kunjana B-person B-person
 
 Please O O
 tell O O
 me O O
 that O O
-Rift B-product O
-herald I-product O
+Rift B-product B-corporation
+herald I-product I-corporation
 still O O
 will O O
 have O O
@@ -1669,13 +1669,13 @@ camps O O
 to O O
 respawn O O
 
-Lil B-person O
-Sly- I-person O
+Lil B-person B-person
+Sly- I-person I-person
 Turn I-creativework O
 Up I-creativework O
 Green I-creativework O
 # O O
-NextToBlow O O
+NextToBlow O B-group
 
 Am O O
 I O O
@@ -1795,7 +1795,7 @@ Where O O
 ' O O
 s O O
 the O O
-Jetta B-product O
+Jetta B-product B-product
 and O O
 350 B-product O
 z I-product O
@@ -1812,11 +1812,11 @@ have O O
 it O O
 in O O
 french B-location O
-disney I-location O
-parks I-location O
+disney I-location B-corporation
+parks I-location I-corporation
 : O O
 ( O O
-Mo O O
+Mo O B-person
 ' O O
 at O O
 is O O
@@ -1848,7 +1848,7 @@ the O O
 way O O
 Suzanne B-person B-person
 and O O
-Wendy B-person B-person
+Wendy B-person B-corporation
 interact O O
 . O O
 . O O
@@ -1865,7 +1865,7 @@ to O O
 become O O
 best O O
 than O O
-Bollywood B-location B-person
+Bollywood B-location O
 due O O
 to O O
 their O O
@@ -1896,7 +1896,7 @@ that O O
 is O O
 basically O O
 a O O
-lenovo B-corporation O
+lenovo B-corporation B-product
 yoga B-product O
 laptop I-product O
 " O O
@@ -1972,12 +1972,12 @@ me O O
 of O O
 Amos B-person B-person
 from O O
-uZalo B-creativework O
+uZalo B-creativework B-person
 
 I O O
 loved O O
 the O O
-GPK B-creativework B-corporation
+GPK B-creativework O
 : I-creativework O
 Movie I-creativework O
 ! O O
@@ -2060,7 +2060,7 @@ Good O O
 comparisons O O
 between O O
 the O O
-ipad B-product B-product
+ipad B-product O
 and O O
 the O O
 Ipad B-product B-product
@@ -2115,7 +2115,7 @@ better O O
 stop O O
 dancing O O
 before O O
-crissy B-person O
+crissy B-person B-person
 wakes O O
 up O O
 😂 O O
@@ -2234,8 +2234,8 @@ Tower I-location I-location
 Coming O O
 August O O
 
-Boi B-person O
-Ching I-person O
+Boi B-person B-person
+Ching I-person I-person
 Lang I-person O
 is O O
 providing O O
@@ -2264,15 +2264,15 @@ Ass O O
 
 Sharing O O
 , O O
-Justice O B-person
+Justice O O
 and O O
 Peace O O
 for O O
 All O O
 - O O
-Save O O
-Our O O
-Planet B-location O
+Save O B-corporation
+Our O I-corporation
+Planet B-location I-corporation
 . O O
 
 To O O
@@ -2384,8 +2384,8 @@ the O O
 United B-location B-group
 States I-location I-group
 
-Jjbjnbj O O
-nTv O O
+Jjbjnbj O B-person
+nTv O I-person
 
 I O O
 love O O
@@ -2427,8 +2427,8 @@ doing O O
 Fargo B-creativework B-location
 ( O O
 the O O
-Coen B-person B-creativework
-brothers I-person I-creativework
+Coen B-person B-person
+brothers I-person I-person
 ' O O
 movie O O
 ) O O
@@ -2456,14 +2456,14 @@ examples O O
 
 You O O
 forgot O O
-Aces B-person B-group
-Haki O I-group
+Aces B-person B-person
+Haki O I-person
 but O O
 battle O O
 was O O
 bad O O
 and O O
-screwattack O B-person
+screwattack O O
 has O O
 not O O
 done O O
@@ -2843,8 +2843,8 @@ I O O
 just O O
 started O O
 a O O
-Battlefield B-creativework B-corporation
-Channel I-creativework I-corporation
+Battlefield B-creativework O
+Channel I-creativework O
 anyone O O
 got O O
 any O O
@@ -2948,8 +2948,8 @@ about O O
 NK O O
 
 " O O
-Dodge B-product B-creativework
-Cuda I-product I-creativework
+Dodge B-product B-product
+Cuda I-product I-product
 " O O
 . O O
 . O O
@@ -3043,7 +3043,7 @@ of O O
 the O O
 Kenworth B-product O
 when O O
-Semis B-product O
+Semis B-product B-group
 are O O
 n O O
 ' O O
@@ -3079,7 +3079,7 @@ HOLIDAY B-creativework O
 ROOOOOOOOOOAAAAAAAAAAAAAAAAAAAAAAAAADDDDDDDDDDDDDD I-creativework O
 
 Awwwww O O
-Didga B-person O
+Didga B-person B-person
 ❤ O O
 😍 O O
 so O O
@@ -3168,7 +3168,7 @@ in O O
 your O O
 start O O
 video O O
-Ssundee B-person O
+Ssundee B-person B-person
 
 This O O
 is O O
@@ -3192,7 +3192,7 @@ Glenda B-person B-person
 is O O
 related O O
 to O O
-Ayanda B-person O
+Ayanda B-person B-location
 
 dude O O
 that O O
@@ -3237,7 +3237,7 @@ more O O
 floppy O O
 films O O
 then O O
-Mortdecai B-creativework B-person
+Mortdecai B-creativework O
 . O O
 
 Where O O
@@ -3247,10 +3247,10 @@ Kishan B-person B-person
 ? O O
 
 thanks O O
-obama B-person O
+obama B-person B-person
 ! O O
 
-Nigga O O
+Nigga O B-person
 ' O O
 s O O
 rings O O
@@ -3331,8 +3331,8 @@ upp O O
 ! O O
 ! O O
 
-Bye O O
-Capwin B-person O
+Bye O B-corporation
+Capwin B-person I-corporation
 ! O O
 
 When O O
@@ -3365,9 +3365,9 @@ stronger O O
 person O O
 ! O O
 
-Game B-creativework O
-of I-creativework O
-Thrones I-creativework B-creativework
+Game B-creativework B-creativework
+of I-creativework I-creativework
+Thrones I-creativework I-creativework
 is O O
 not O O
 based O O
@@ -3396,8 +3396,8 @@ his O O
 brother O O
 Lugia B-person B-person
 
-The B-corporation O
-Clinton B-corporation B-person
+The B-corporation B-person
+Clinton B-corporation I-person
 Foundation I-corporation I-person
 should O O
 be O O
@@ -3426,7 +3426,7 @@ Movie I-creativework O
 Princess B-creativework B-creativework
 Peach I-creativework I-creativework
 Comes I-creativework I-creativework
-Back I-creativework I-creativework
+Back I-creativework O
 
 Am O O
 I O O
@@ -3456,7 +3456,7 @@ he O O
 said O O
 pagal B-person O
 kay I-person O
-bacha I-person O
+bacha I-person B-person
 please O O
 do O O
 n O O
@@ -3464,13 +3464,13 @@ n O O
 t O O
 abuse O O
 
-MLG B-person O
+MLG B-person B-group
 6531 I-person O
 play O O
 this O O
 game O O
 
-hangwani B-person B-person
+hangwani B-person O
 is O O
 slaying O O
 colours O O
@@ -3500,7 +3500,7 @@ r O O
 i O O
 . O O
 p O O
-Hitler B-person O
+Hitler B-person B-person
 
 Thank O O
 you O O
@@ -3580,16 +3580,16 @@ at O O
 15 O O
 . O O
 
-The O O
-hood O O
+The O B-creativework
+hood O I-creativework
 opening O O
 reminds O O
 me O O
 of O O
 a O O
 classic O O
-Saab B-product O
-900 I-product O
+Saab B-product B-product
+900 I-product I-product
 . O O
 
 That O O
@@ -3735,8 +3735,8 @@ Thanks O O
 for O O
 uploading O O
 . O O
-Much O O
-Love O B-person
+Much O B-person
+Love O I-person
 Miccoli B-person I-person
 
 PG B-person O
@@ -3756,7 +3756,7 @@ memory O O
 is O O
 short O O
 . O O
-Britian B-location O
+Britian B-location B-location
 went O O
 to O O
 war O O
@@ -3818,8 +3818,8 @@ Sherlock B-person B-person
 Holmes I-person I-person
 
 put O O
-trump B-person O
-frog I-person O
+trump B-person B-person
+frog I-person I-person
 in O O
 the O O
 jail O O
@@ -4106,8 +4106,8 @@ cool O O
 . O O
 
 No O O
-Dodge B-product O
-Demon I-product O
+Dodge B-product B-person
+Demon I-product I-person
 ? O O
 It O O
 was O O
@@ -4116,10 +4116,10 @@ a O O
 little O O
 bit O O
 in O O
-Fate B-creativework O
-of I-creativework O
-the I-creativework O
-Furious I-creativework O
+Fate B-creativework B-creativework
+of I-creativework I-creativework
+the I-creativework I-creativework
+Furious I-creativework I-creativework
 . O O
 . O O
 . O O
@@ -4138,7 +4138,7 @@ Clint B-person B-person
 Eastwood I-person I-person
 
 put O O
-Dozer O O
+Dozer O B-group
 ' O O
 s O O
 spit O O
@@ -4150,7 +4150,7 @@ we O O
 ' O O
 re O O
 in O O
-WI B-location O
+WI B-location B-location
 ? O O
 Thats O O
 ' O O
@@ -4288,13 +4288,13 @@ found O O
 out O O
 the O O
 reason O O
-lebron B-person O
+lebron B-person B-person
 started O O
 laughing O O
 at O O
 7 O O
 : O O
-41 O B-person
+41 O O
 is O O
 because O O
 he O O
@@ -4343,7 +4343,7 @@ song O O
 . O O
 THANK O O
 YOU O O
-PARAMORE O B-person
+PARAMORE O O
 ! O O
 
 please O O
@@ -4356,7 +4356,7 @@ boys I-creativework O
 Dude O O
 should O O
 join O O
-TYT B-group O
+TYT B-group B-group
 . O O
 Those O O
 guys O O
@@ -4415,7 +4415,7 @@ do O O
 n O O
 ' O O
 t O O
-Wendy B-person O
+Wendy B-person B-corporation
 
 That O O
 old O O
@@ -4479,13 +4479,13 @@ hubert B-person B-person
 my O O
 name O O
 is O O
-hubert B-person O
+hubert B-person B-person
 
 That O O
 Mrs B-creativework B-person
 . I-creativework O
 Doubtfire I-creativework B-person
-cutaway O I-person
+cutaway O O
 about O O
 Joan B-person B-person
 Collins I-person I-person
@@ -4504,7 +4504,7 @@ hear O O
 is O O
 Marty B-person B-person
 from O O
-Madagascar B-creativework B-person
+Madagascar B-creativework B-location
 when O O
 he O O
 speaks O O
@@ -4512,7 +4512,7 @@ speaks O O
 😂 O O
 😂 O O
 
-Coyote B-person O
+Coyote B-person B-location
 I O O
 want O O
 whatever O O
@@ -4550,9 +4550,9 @@ as O O
 always O O
 . O O
 
-Audi B-product O
-R I-product O
-8 I-product O
+Audi B-product B-product
+R I-product I-product
+8 I-product I-product
 is O O
 my O O
 favorite O O
@@ -4560,7 +4560,7 @@ car O O
 
 He O O
 said O O
-mchoke O O
+mchoke O B-person
 but O O
 the O O
 team O O
@@ -4759,8 +4759,8 @@ film O O
 
 Unfunny O O
 libtard O O
-curry O O
-eater O O
+curry O B-person
+eater O I-person
 
 Nep O O
 sounds O O
@@ -4811,8 +4811,8 @@ Dump O B-person
 Trump B-person I-person
 . O O
 
-Anime O O
-logic O O
+Anime O B-creativework
+logic O I-creativework
 is O O
 so O O
 real O O
@@ -4889,8 +4889,8 @@ channel O O
 last O O
 night O O
 to O O
-Independence B-creativework B-location
-Day I-creativework I-location
+Independence B-creativework B-group
+Day I-creativework I-group
 . O O
 . O O
 . O O
@@ -4900,11 +4900,11 @@ shiiiiit O O
 The O O
 convo B-corporation O
 aver O O
-BSB B-group B-group
+BSB B-group O
 and O O
 N B-group O
 ' I-group O
-Sync I-group O
+Sync I-group B-product
 . O O
 . O O
 . O O
@@ -5015,8 +5015,8 @@ TTG B-corporation O
 turning O O
 a O O
 good O O
-Teen B-creativework O
-Titans I-creativework B-group
+Teen B-creativework B-creativework
+Titans I-creativework I-creativework
 episode O O
 . O O
 And O O
@@ -5163,8 +5163,8 @@ S I-group O
 - O O
 Lifestyle B-creativework O
 ft O O
-Germini B-person O
-Major I-person O
+Germini B-person B-person
+Major I-person I-person
 
 i O O
 just O O
@@ -5253,8 +5253,8 @@ black O O
 
 Super O O
 aleena B-person O
-Padikall I-person O
-natural O O
+Padikall I-person B-person
+natural O I-person
 performance O O
 
 Wtf O O
@@ -5358,7 +5358,7 @@ views O O
 this O O
 has O O
 . O O
-IndyCar B-creativework B-group
+IndyCar B-creativework B-corporation
 has O O
 always O O
 been O O
@@ -5422,7 +5422,7 @@ attribute O O
 that O O
 directly O O
 to O O
-dana B-person O
+dana B-person B-person
 ! O O
 He O O
 wants O O
@@ -5430,7 +5430,7 @@ someone O O
 else O O
 to O O
 pay O O
-conor O B-person
+conor O O
 the O O
 big O O
 money O O
@@ -5452,7 +5452,7 @@ go O O
 back O O
 to O O
 carrying O O
-Floyds B-person O
+Floyds B-person B-location
 bags O O
 ! O O
 
@@ -5561,14 +5561,14 @@ thing O O
 
 THE O O
 NEW O O
-NWA B-group O
+NWA B-group B-group
 ! O O
 ! O O
 ! O O
 ! O O
 kendrick B-person B-person
 and O O
-schoolboy B-person O
+schoolboy B-person B-person
 
 When O O
 do O O
@@ -5622,7 +5622,7 @@ the O O
 old O O
 house O O
 
-Legend O B-person
+Legend O O
 has O O
 it O O
 , O O
@@ -5740,7 +5740,7 @@ liked O O
 the O O
 vid O O
 
-Tesla B-corporation B-person
+Tesla B-corporation B-corporation
 is O O
 future O O
 , O O
@@ -5832,7 +5832,7 @@ Doug B-person B-person
 
 Need O O
 the O O
-xman B-creativework O
+xman B-creativework B-person
 video I-creativework O
 with O O
 that O O
@@ -5856,8 +5856,8 @@ Just O O
 wow O O
 . O O
 
-The O O
-Daddarios B-group O
+The O B-corporation
+Daddarios B-group I-corporation
 are O O
 so O O
 beautiful O O
@@ -5898,7 +5898,7 @@ very O O
 impressed O O
 by O O
 this O O
-ASMR B-product O
+ASMR B-product B-group
 . O O
 the O O
 background O O
@@ -5914,10 +5914,10 @@ most O O
 intoxicating O O
 . O O
 
-Mcchoke B-creativework O
+Mcchoke B-creativework B-person
 but O O
 the B-group O
-warriors I-group O
+warriors I-group B-group
 blew O O
 a O O
 3 O O
@@ -5975,8 +5975,8 @@ the O O
 challenges O O
 for O O
 the O O
-oni B-product O
-genji I-product B-person
+oni B-product B-person
+genji I-product I-person
 and O O
 dva B-product O
 but O O
@@ -6156,14 +6156,14 @@ D O O
 Can O O
 I O O
 install O O
-Windows B-product B-product
+Windows B-product O
 7 I-product O
 on O O
 it O O
 ? O O
 
-ManVsGame B-creativework O
-Music O O
+ManVsGame B-creativework B-person
+Music O I-person
 pls O O
 
 # O O
@@ -6196,7 +6196,7 @@ thing O O
 : O O
 Fairies O O
 in O O
-Dutch O B-location
+Dutch O O
 = O O
 feeën O O
 : O O
@@ -6359,9 +6359,9 @@ m O O
 so O O
 . O O
 
-Perfect O O
-Song O O
-Choice B-group O
+Perfect O B-creativework
+Song O I-creativework
+Choice B-group I-creativework
 ! O O
 
 how O O
@@ -6412,8 +6412,8 @@ traitor O O
 When O O
 is O O
 your O O
-Morphe B-product B-person
-Pallette I-product I-person
+Morphe B-product B-product
+Pallette I-product I-product
 coming O O
 out O O
 so O O
@@ -6459,8 +6459,8 @@ mma O O
 ass O O
 or O O
 china B-location O
-sanda O B-person
-taichi O I-person
+sanda O O
+taichi O O
 youth O O
 
 momo B-person B-person
@@ -6628,8 +6628,8 @@ will O O
 unlock O O
 . O O
 
-Hi O B-person
-Michter B-person I-person
+Hi O O
+Michter B-person B-person
 , O O
 we O O
 are O O
@@ -6720,8 +6720,8 @@ brown I-group I-person
 band I-group O
 ! O O
 
-Poor B-person B-person
-Carson I-person I-person
+Poor B-person O
+Carson I-person B-person
 . O O
 . O O
 . O O
@@ -6920,7 +6920,7 @@ whine O O
 hopefully O O
 rep B-location O
 of I-location O
-ireland I-location O
+ireland I-location B-location
 have O O
 supporters O O
 like O O
@@ -7018,7 +7018,7 @@ homefront B-creativework O
 Well O O
 , O O
 THANKS O O
-OBAMA B-person O
+OBAMA B-person B-person
 ! O O
 : O O
 D O O
@@ -7210,7 +7210,7 @@ Viewers O O
 Management O O
 
 put O O
-draymond B-person O
+draymond B-person B-person
 on O O
 1993 B-group O
 Phoenix I-group B-group
@@ -7296,9 +7296,9 @@ teaming O O
 up O O
 with O O
 the O O
-Trailer B-group B-creativework
-Park I-group I-creativework
-Boys I-group I-creativework
+Trailer B-group B-group
+Park I-group I-group
+Boys I-group I-group
 would O O
 make O O
 a O O
@@ -7312,8 +7312,8 @@ are O O
 you O O
 Taylor B-person B-person
 
-Hi O B-person
-Fleur B-person I-person
+Hi O O
+Fleur B-person B-person
 , O O
 would O O
 you O O
@@ -7372,10 +7372,10 @@ where O O
 was O O
 it O O
 ? O O
-Turkey B-location O
+Turkey B-location B-location
 ? O O
 
-Beat B-creativework B-group
+Beat B-creativework O
 is O O
 so O O
 cold O O
@@ -7400,8 +7400,8 @@ have O O
 access O O
 to O O
 the O O
-White B-location O
-House I-location O
+White B-location B-location
+House I-location I-location
 like O O
 that O O
 
@@ -7472,7 +7472,7 @@ overwhelmed O O
 by O O
 butthurt O O
 . O O
-SS B-group O
+SS B-group B-person
 should O O
 have O O
 tackled O O
@@ -7499,7 +7499,7 @@ way O O
 they O O
 used O O
 Trinidad B-product B-person
-pepper I-product O
+pepper I-product I-person
 
 mi O O
 a O O
@@ -7596,7 +7596,7 @@ asking O O
 So O O
 many O O
 butthurt O O
-Sinophiles B-group B-person
+Sinophiles B-group O
 in O O
 the O O
 comments O O
@@ -7609,7 +7609,7 @@ setting O O
 Accomplishments O O
 The O O
 # O O
-Lamestream O O
+Lamestream O B-person
 media O O
 and O O
 other O O
@@ -7678,7 +7678,7 @@ the O O
 show O O
 . O O
 Alonso B-person B-person
-222 O I-person
+222 O O
 . O O
 548 O O
 MPH O O
@@ -7759,8 +7759,8 @@ from O O
 Papa B-person B-person
 Censor I-person I-person
 
-bo O O
-Burnham B-person B-person
+bo O B-person
+Burnham B-person I-person
 is O O
 in O O
 this O O
@@ -7770,8 +7770,8 @@ this O O
 15 O O
 : O O
 33 O O
-Space B-creativework O
-Odyssey I-creativework O
+Space B-creativework B-product
+Odyssey I-creativework I-product
 ? O O
 
 Wow O O
@@ -7843,7 +7843,7 @@ the O O
 baby O O
 Vanessa B-person B-person
 
-Green B-person B-group
+Green B-person B-person
 is O O
 not O O
 a O O
@@ -7918,7 +7918,7 @@ it O O
 ' O O
 s O O
 called O O
-Neo B-person B-product
+Neo B-person O
 ) O O
 
 I O O
@@ -8235,7 +8235,7 @@ thing O O
 now O O
 . O O
 . O O
-GOAT B-group O
+GOAT B-group B-person
 is O O
 doing O O
 it O O
@@ -8257,8 +8257,8 @@ ve O O
 ever O O
 seen O O
 
-Fuck O B-person
-Canelo B-person I-person
+Fuck O O
+Canelo B-person B-person
 
 Highly O O
 motivational O O
@@ -8634,7 +8634,7 @@ reference O O
 ? O O
 Lmao O O
 
-Ripley B-person B-person
+Ripley B-person B-location
 and O O
 Bishop B-person B-person
 back O O
@@ -8689,7 +8689,7 @@ the O O
 best O O
 comedian O O
 in O O
-Mzansi B-location B-location
+Mzansi B-location O
 I O O
 tell O O
 you O O
@@ -8698,8 +8698,8 @@ and O O
 good O O
 luck O O
 . O O
-Mara B-person B-person
-Kgomotso I-person I-person
+Mara B-person O
+Kgomotso I-person O
 o O O
 na O O
 le O O
@@ -8735,10 +8735,10 @@ _ O O
 31 O O
 : O O
 12 O O
-Cue O B-creativework
-The B-group I-creativework
-Lonely I-group I-creativework
-Island I-group I-creativework
+Cue O B-location
+The B-group I-location
+Lonely I-group I-location
+Island I-group I-location
 
 this O O
 just O O
@@ -8826,8 +8826,8 @@ If O O
 They O O
 Make O O
 another O O
-Hitman B-creativework B-creativework
-Movie I-creativework I-creativework
+Hitman B-creativework O
+Movie I-creativework O
 You O O
 have O O
 my O O
@@ -8857,8 +8857,8 @@ you O O
 make O O
 Boo B-person O
 from O O
-monster B-creativework O
-Inc I-creativework O
+monster B-creativework B-corporation
+Inc I-creativework I-corporation
 : O O
 ) O O
 
@@ -8944,7 +8944,7 @@ a O O
 long O O
 time O O
 was O O
-getoffmyWiFi O B-person
+getoffmyWiFi O O
 . O O
 And O O
 the O O
@@ -8976,7 +8976,7 @@ it O O
 Nice O O
 shooting O O
 , O O
-Tex B-person B-person
+Tex B-person B-location
 ! O O
 ! O O
 ! O O
@@ -9013,7 +9013,7 @@ just O O
 channeled O O
 their O O
 inner O O
-GS O O
+GS O B-group
 to O O
 blow O O
 a O O
@@ -9048,8 +9048,8 @@ proud O O
 of O O
 you O O
 Grace B-person B-person
-gal I-person O
-Mahary I-person O
+gal I-person I-person
+Mahary I-person I-person
 . O O
 
 Eww O O
@@ -9119,7 +9119,7 @@ will O O
 forever O O
 be O O
 my O O
-President O B-person
+President O O
 . O O
 So O O
 inspiring O O
@@ -9160,7 +9160,7 @@ Disnney B-product B-creativework
 Channel I-product I-creativework
 
 that O O
-EL O O
+EL O B-person
 is O O
 disturbing O O
 me O O
@@ -9168,7 +9168,7 @@ me O O
 
 Where O O
 is O O
-smit B-person O
+smit B-person B-person
 7 I-person O
 y I-person O
 ' O O
@@ -9224,7 +9224,7 @@ Wolverine B-person B-person
 
 My O O
 boy O O
-iDubbbz B-person O
+iDubbbz B-person B-person
 
 the O O
 biggest O O
@@ -9267,8 +9267,8 @@ a O O
 badass O O
 dude O O
 
-Preston B-person B-person
-Do O I-person
+Preston B-person B-location
+Do O O
 an O O
 overwatch B-creativework O
 hide O O
@@ -9276,7 +9276,7 @@ n O O
 seek O O
 
 bwoi O O
-Shakera B-person B-person
+Shakera B-person O
 thick O O
 nuh O O
 raas O O
@@ -9465,7 +9465,7 @@ is O O
 fucking O O
 shit O O
 
-Princeboss B-person B-person
+Princeboss B-person O
 is O O
 my O O
 username O O
@@ -9475,7 +9475,7 @@ pls O O
 
 So O O
 , O O
-Hela B-person B-person
+Hela B-person O
 wants O O
 them O O
 not O O
@@ -9598,7 +9598,7 @@ a O O
 K-Pop O O
 band O O
 called O O
-BTS B-group O
+BTS B-group B-person
 you O O
 should O O
 check O O
@@ -9676,7 +9676,7 @@ do O O
 R B-product O
 8 I-product O
 vs O O
-Challenger B-product O
+Challenger B-product B-person
 
 too O O
 be O O
@@ -9706,7 +9706,7 @@ like O O
 from O O
 Ruben B-person B-person
 from O O
-Minecraft B-creativework B-corporation
+Minecraft B-creativework B-product
 story O O
 mode O O
 
@@ -9859,9 +9859,9 @@ been O O
 an O O
 advert O O
 in O O
-Grand B-creativework B-location
-Theft I-creativework I-location
-Auto I-creativework I-location
+Grand B-creativework O
+Theft I-creativework O
+Auto I-creativework O
 its O O
 hilarious O O
 ! O O
@@ -9940,8 +9940,8 @@ years O O
 old O O
 
 That O O
-Eclipse B-product O
-Spyder I-product O
+Eclipse B-product B-product
+Spyder I-product I-product
 thoo O O
 . O O
 . O O
@@ -10004,9 +10004,9 @@ order O O
 deconstructed O O
 car O O
 at O O
-the O B-location
-MCM B-location I-location
-restaurant I-location I-location
+the O O
+MCM B-location O
+restaurant I-location O
 
 Jaime B-person B-person
 please O O
@@ -10014,7 +10014,7 @@ i O O
 need O O
 help O O
 , O O
-google B-product B-corporation
+google B-product O
 pixel I-product O
 or O O
 galaxy B-product B-product
@@ -10040,7 +10040,7 @@ Plus O O
 ? O O
 Seriously O O
 ? O O
-Jesus B-person O
+Jesus B-person B-person
 you O O
 ca O O
 n O O
@@ -10082,7 +10082,7 @@ rebelism I-person O
 Jai B-person B-person
 prabhas I-person I-person
 
-Proof O O
+Proof O B-person
 that O O
 Travis B-person B-person
 scott I-person I-person
@@ -10439,9 +10439,9 @@ so O O
 funny O O
 ! O O
 
-audi B-product O
-mercedes I-product O
-bmw I-product O
+audi B-product B-product
+mercedes I-product I-product
+bmw I-product I-product
 
 Great O O
 animation O O
@@ -10492,9 +10492,9 @@ is O O
 this O O
 along O O
 with O O
-Saturday B-creativework B-creativework
-Night I-creativework I-creativework
-Live I-creativework I-creativework
+Saturday B-creativework O
+Night I-creativework O
+Live I-creativework O
 just O O
 not O O
 funny O O
@@ -10530,8 +10530,8 @@ exactly O O
 like O O
 Cartman B-person B-person
 from O O
-south B-creativework B-location
-park I-creativework I-location
+south B-creativework O
+park I-creativework O
 
 The O O
 only O O
@@ -10583,8 +10583,8 @@ I O O
 can O O
 see O O
 Trump B-corporation B-person
-saltmining I-corporation O
-Inc I-corporation O
+saltmining I-corporation B-corporation
+Inc I-corporation I-corporation
 . O O
 had O O
 discovered O O
@@ -10766,7 +10766,7 @@ know O O
 they O O
 were O O
 all O O
-Canadian O B-location
+Canadian O O
 
 Youre O O
 younger O O
@@ -10844,7 +10844,7 @@ along O O
 but O O
 he O O
 aint O O
-kobe B-creativework O
+kobe B-creativework B-person
 
 A O O
 lot O O
@@ -10905,14 +10905,14 @@ in O O
 Merseyside B-location B-location
 or O O
 the O O
-United B-location B-group
-Kingdom I-location I-group
+United B-location B-location
+Kingdom I-location I-location
 for O O
 that O O
 matter O O
 
 that O O
-Bagdanovich B-person O
+Bagdanovich B-person B-person
 part O O
 I O O
 rewind O O
@@ -10947,8 +10947,8 @@ bad O O
 , O O
 eyin O O
 omo O O
-eda O B-person
-adamo O I-person
+eda O O
+adamo O B-person
 , O O
 won O O
 fi O O
@@ -10995,7 +10995,7 @@ fight O O
 I O O
 think O O
 # O O
-5 O B-person
+5 O O
 is O O
 inspired O O
 by O O
@@ -11057,8 +11057,8 @@ need O O
 more O O
 drugged O O
 out O O
-Coyote B-creativework B-creativework
-Crib I-creativework I-creativework
+Coyote B-creativework B-person
+Crib I-creativework I-person
 videos O O
 this O O
 was O O
@@ -11083,8 +11083,8 @@ i O O
 love O O
 a O O
 good O O
-Epic B-product O
-Mickey I-product B-person
+Epic B-product B-creativework
+Mickey I-product I-creativework
 joke O O
 . O O
 lovin O O
@@ -11200,7 +11200,7 @@ song O O
 Chur O O
 
 hey O O
-deji O O
+deji O B-person
 make O O
 a O O
 vidoe O O
@@ -11293,17 +11293,17 @@ with O O
 you O O
 ! O O
 
-RIP O B-group
-CHIEFS B-group I-group
+RIP O O
+CHIEFS B-group B-group
 . O O
 
-J B-person O
-. I-person O
-cole I-person B-person
+J B-person B-person
+. I-person I-person
+cole I-person I-person
 is O O
 a O O
-Living O B-creativework
-Legend O I-creativework
+Living O B-group
+Legend O I-group
 . O O
 🙏 O O
 
@@ -11404,7 +11404,7 @@ him O O
 where O O
 ' O O
 s O O
-kishan B-person O
+kishan B-person B-person
 ? O O
 
 This O O
@@ -11421,7 +11421,7 @@ student O O
 myself O O
 and O O
 use O O
-Keyshot B-product B-person
+Keyshot B-product O
 for O O
 my O O
 rendering O O
@@ -11499,7 +11499,7 @@ itself O O
 i O O
 wish O O
 that O O
-Tesla B-corporation B-person
+Tesla B-corporation B-corporation
 will O O
 rise O O
 and O O
@@ -11654,7 +11654,7 @@ the O O
 reporter O O
 stressed O O
 on O O
-trump B-person B-corporation
+trump B-person B-person
 about O O
 something O O
 useful O O
@@ -11772,7 +11772,7 @@ bring O O
 next O O
 . O O
 
-Dreymond B-person B-person
+Dreymond B-person O
 , O O
 so O O
 much O O
@@ -11787,7 +11787,7 @@ pkg O O
 i O O
 love O O
 you O O
-momo O O
+momo O B-person
 you O O
 are O O
 soooo O O
@@ -11866,7 +11866,7 @@ once O O
 again O O
 the O O
 regular O O
-RWBY B-creativework O
+RWBY B-creativework B-creativework
 series I-creativework O
 is O O
 pushed O O
@@ -11914,8 +11914,8 @@ philippines B-location B-location
 ? O O
 😊 O O
 
-Finding B-creativework O
-Bigfoot I-creativework O
+Finding B-creativework B-person
+Bigfoot I-creativework I-person
 in O O
 a O O
 nutshell O O
@@ -12065,7 +12065,7 @@ feast O O
 since O O
 theyre O O
 in O O
-cali B-location B-location
+cali B-location O
 
 Hit O O
 the O O
@@ -12230,7 +12230,7 @@ look O O
 like O O
 Dora B-person B-person
 the I-person O
-Explorer I-person B-product
+Explorer I-person O
 . O O
 
 Drop O O
@@ -12239,7 +12239,7 @@ thousand O O
 of O O
 these O O
 on O O
-Daish B-group O
+Daish B-group B-person
 
 iam O O
 looking O O
@@ -12364,7 +12364,7 @@ just O O
 a O O
 info O O
 about O O
-Deadpool B-creativework B-person
+Deadpool B-creativework B-corporation
 . O O
 Most O O
 of O O
@@ -12508,7 +12508,7 @@ t O O
 watch O O
 any O O
 single O O
-pocketnow B-corporation O
+pocketnow B-corporation B-corporation
 video O O
 just O O
 because O O
@@ -12532,7 +12532,7 @@ You O O
 should O O
 put O O
 " O O
-Laurex B-person O
+Laurex B-person B-product
 " O O
 on O O
 the O O
@@ -12588,7 +12588,7 @@ bad O O
 Great O O
 Video O O
 , O O
-Liked O B-person
+Liked O O
 , O O
 how O O
 about O O
@@ -12608,7 +12608,7 @@ onto O O
 people O O
 if O O
 the O O
-uncle O O
+uncle O B-person
 is O O
 me O O
 i O O
@@ -12737,8 +12737,8 @@ fidget O O
 spinner O O
 vid O O
 
-Discovery B-location B-corporation
-Island I-location I-corporation
+Discovery B-location B-location
+Island I-location I-location
 video O O
 ? O O
 
@@ -12792,7 +12792,7 @@ to O O
 get O O
 some O O
 attention O O
-Mr O B-person
+Mr O O
 . O O
 President O O
 ? O O
@@ -12964,7 +12964,7 @@ far O O
 That O O
 episode O O
 is O O
-Finnish-ed O O
+Finnish-ed O B-creativework
 . O O
 
 I O O
@@ -12978,7 +12978,7 @@ filter O O
 4 O O
 : O O
 30 O O
-Ammm O O
+Ammm O B-person
 I O O
 apologize O O
 . O O
@@ -13059,7 +13059,7 @@ now O O
 
 And O O
 the O O
-Apple B-product B-product
+Apple B-product B-corporation
 home I-product O
 v I-product O
 2 I-product O
@@ -13104,7 +13104,7 @@ Video O O
 👍 O O
 like O O
 and O O
-Abbo O B-person
+Abbo O O
 you O O
 gott O O
 👍 O O
@@ -13192,9 +13192,9 @@ SIM O O
 reminds O O
 me O O
 of O O
-La B-creativework B-location
-La I-creativework I-location
-Land I-creativework I-location
+La B-creativework B-person
+La I-creativework I-person
+Land I-creativework I-person
 
 Make O O
 gun O O
@@ -13298,7 +13298,7 @@ bombs O O
 is O O
 the O O
 " O O
-Tsar O O
+Tsar O B-product
 " O O
 
 This O O
@@ -13314,7 +13314,7 @@ Slouching I-creativework I-person
 
 Directed O O
 by O O
-LSD B-person O
+LSD B-person B-product
 . O O
 . O O
 . O O
@@ -13331,8 +13331,8 @@ ish O O
 ' O O
 . O O
 
-Worlds O O
-destiny O O
+Worlds O B-person
+destiny O I-person
 sits O O
 on O O
 OUR O O
@@ -13467,8 +13467,8 @@ we O O
 finally O O
 get O O
 a O O
-Black O O
-héroe O O
+Black O B-person
+héroe O I-person
 
 Can O O
 I O O
@@ -13567,7 +13567,7 @@ n O O
 ' O O
 t O O
 paper B-creativework O
-Mario I-creativework O
+Mario I-creativework B-person
 finish O O
 a O O
 series O O
@@ -13609,8 +13609,8 @@ worth O O
 watching O O
 ! O O
 
-STARVIN B-person B-person
-MARVIN I-person I-person
+STARVIN B-person O
+MARVIN I-person B-person
 
 Simple O O
 but O O
@@ -13671,18 +13671,18 @@ asses O O
 . O O
 
 Every O O
-Minecraft B-creativework O
+Minecraft B-creativework B-product
 ever O O
 What O O
 if O O
-Minecraft B-creativework O
+Minecraft B-creativework B-product
 were O O
 . O O
 . O O
 . O O
 
 hey O O
-titi B-person O
+titi B-person B-person
 nice O O
 video O O
 
@@ -13703,9 +13703,9 @@ cat O O
 video O O
 ? O O
 
-Like O B-creativework
-Bubble B-person I-creativework
-Boy I-person I-creativework
+Like O O
+Bubble B-person O
+Boy I-person O
 - O O
 - O O
 except O O
@@ -13736,7 +13736,7 @@ other I-creativework O
 artists I-creativework O
 
 yea O O
-tanner B-person O
+tanner B-person B-person
 do O O
 another O O
 hide O O
@@ -13753,7 +13753,7 @@ house O O
 When O O
 is O O
 the O O
-Youtube B-product B-corporation
+Youtube B-product O
 Fanfest O O
 gonna O O
 happen O O
@@ -13814,9 +13814,9 @@ would O O
 like O O
 won O O
 the O O
-Jet B-product B-product
-Black I-product I-product
-Airpods I-product I-product
+Jet B-product O
+Black I-product O
+Airpods I-product O
 . O O
 
 When O O
@@ -13824,8 +13824,8 @@ will O O
 we O O
 get O O
 that O O
-Filthy B-person B-person
-Frank I-person I-person
+Filthy B-person O
+Frank I-person B-person
 reaction O O
 ? O O
 
@@ -13846,7 +13846,7 @@ to O O
 get O O
 popular O O
 
-Bravo O O
+Bravo O B-person
 ! O O
 Funny O O
 ! O O
@@ -13855,7 +13855,7 @@ Funny O O
 
 The O O
 fuckin O O
-kendrick B-person O
+kendrick B-person B-person
 reference O O
 
 My O O
@@ -14117,13 +14117,13 @@ amazing O O
 . O O
 Praise O O
 His O O
-holly O O
+holly O B-person
 name O O
 👐 O O
 👏 O O
 
-malume B-person B-person
-freddy B-person I-person
+malume B-person O
+freddy B-person B-person
 l O O
 love O O
 you O O
@@ -14139,7 +14139,7 @@ dololo O O
 . O O
 YV O O
 and O O
-romeo B-person B-person
+romeo B-person O
 my O O
 favorite O O
 people O O
@@ -14400,8 +14400,8 @@ V O O
 6 O O
 over O O
 a O O
-Straight O O
-6 O O
+Straight O B-creativework
+6 O I-creativework
 is O O
 beyond O O
 me O O
@@ -14504,7 +14504,7 @@ a O O
 lot O O
 better O O
 if O O
-Bee B-person O
+Bee B-person B-person
 was O O
 n O O
 ' O O
@@ -14528,7 +14528,7 @@ not O O
 filming O O
 . O O
 
-Muselk B-person O
+Muselk B-person B-person
 is O O
 the O O
 best O O
@@ -14541,7 +14541,7 @@ ftw O O
 rip O O
 in O O
 pieces O O
-Ryzen B-person O
+Ryzen B-person B-location
 
 I O O
 can O O
@@ -14592,10 +14592,10 @@ apart O O
 haha O O
 . O O
 
-Archakam B-person O
-Teaser O O
-Darling B-creativework O
-Fans O O
+Archakam B-person B-person
+Teaser O I-person
+Darling B-creativework I-person
+Fans O I-person
 
 No O O
 rate O O
@@ -14804,7 +14804,7 @@ media O O
 blitz O O
 ? O O
 
-Leeds B-group B-group
+Leeds B-group B-location
 fan O O
 I O O
 I O O
@@ -14880,7 +14880,7 @@ job O O
 han O O
 myself O O
 
-JFT O O
+JFT O B-group
 96 O O
 NEVER O O
 buy O O
@@ -14893,8 +14893,8 @@ this O O
 is O O
 the O O
 best O O
-Wendy B-creativework B-person
-show I-creativework O
+Wendy B-creativework B-creativework
+show I-creativework I-creativework
 I O O
 ' O O
 ve O O
@@ -14972,8 +14972,8 @@ beaver O O
 
 FOR O O
 THAT O O
-REMY B-person O
-EFFECT- O O
+REMY B-person B-person
+EFFECT- O I-person
 1 O O
 : O O
 40 O O
@@ -15034,8 +15034,8 @@ there O O
 Peanuts O O
 at O O
 a O O
-Berry O B-location
-Farm O I-location
+Berry O B-corporation
+Farm O I-corporation
 . O O
 . O O
 . O O
@@ -15099,7 +15099,7 @@ hero O O
 D O O
 
 My O O
-uncle O O
+uncle O B-person
 ' O O
 s O O
 Galaxy B-product B-product
@@ -15265,7 +15265,7 @@ song O O
 Now O O
 if O O
 only O O
-Del B-person B-person
+Del B-person O
 will O O
 make O O
 a O O
@@ -15300,7 +15300,7 @@ deserve O O
 what O O
 happened O O
 to O O
-shima O O
+shima O B-person
 is O O
 shi O O
 OK O O
@@ -15385,9 +15385,9 @@ Koops B-creativework O
 . O O
 . O O
 
-Ronaldo B-product B-product
-FIFA I-product I-product
-18 I-product I-product
+Ronaldo B-product B-person
+FIFA I-product I-person
+18 I-product O
 card I-product O
 shooting O O
 stats O O
@@ -15434,7 +15434,7 @@ have O O
 to O O
 send O O
 a O O
-SWAT B-group B-group
+SWAT B-group O
 team O O
 
 So O O
@@ -15460,7 +15460,7 @@ mini- B-product O
 DP I-product O
 instead O O
 of O O
-Thunderbolt B-product O
+Thunderbolt B-product B-corporation
 3 I-product O
 - O O
 . O O
@@ -15554,7 +15554,7 @@ Cancoon B-location B-person
 VLOG O O
 I O O
 watched​was O O
-NoBiggieTV B-person B-person
+NoBiggieTV B-person B-group
 ' O O
 s O O
 and O O
@@ -15590,7 +15590,7 @@ crowd O O
 . O O
 Flight B-creativework O
 of I-creativework O
-Passage I-creativework B-location
+Passage I-creativework O
 should O O
 be O O
 good O O
@@ -15763,7 +15763,7 @@ just O O
 me O O
 or O O
 does O O
-Wildcat B-person O
+Wildcat B-person B-person
 look O O
 like O O
 Scarce B-person O
@@ -15780,9 +15780,9 @@ really O O
 sad O O
 
 THE B-group O
-KINGS I-group B-group
-ARE O I-group
-BACK O I-group
+KINGS I-group O
+ARE O O
+BACK O O
 
 When O O
 can O O
@@ -15793,7 +15793,7 @@ the O O
 Zeitgeist B-group O
 message O O
 to O O
-Muslim O B-location
+Muslim O O
 countries O O
 ? O O
 
@@ -15823,8 +15823,8 @@ girlfriend I-creativework O
 . O O
 ! O O
 Dhoni B-creativework B-person
-Vs I-creativework I-person
-Nehra I-creativework I-person
+Vs I-creativework O
+Nehra I-creativework B-person
 definitely O O
 it O O
 ' O O
@@ -15900,7 +15900,7 @@ situation O O
 here O O
 lately O O
 . O O
-CEO O B-person
+CEO O O
 might O O
 want O O
 to O O
@@ -15910,7 +15910,7 @@ for O O
 a O O
 job O O
 at O O
-McDonald B-corporation B-corporation
+McDonald B-corporation B-location
 ' O O
 s O O
 , O O
@@ -15970,7 +15970,7 @@ you O O
 ! O O
 ! O O
 
-Nurture O O
+Nurture O B-group
 his O O
 interest O O
 on O O
@@ -16111,7 +16111,7 @@ ok O O
 then O O
 * O O
 
-YOOOOOOOOOOO O O
+YOOOOOOOOOOO O B-group
 . O O
 Are O O
 you O O
@@ -16155,7 +16155,7 @@ Does O O
 this O O
 mean O O
 your O O
-Titan B-product B-product
+Titan B-product O
 AE I-product O
 review O O
 is O O
@@ -16240,7 +16240,7 @@ here O O
 and O O
 I O O
 heard O O
-Spice B-person O
+Spice B-person B-product
 from O O
 shokugeki B-creativework O
 no I-creativework O
@@ -16274,7 +16274,7 @@ should O O
 bring O O
 aphmau B-person O
 - I-person O
-Senpai I-person O
+Senpai I-person B-person
 
 I O O
 know O O
@@ -16386,7 +16386,7 @@ mankind O O
 
 The O O
 Nokia B-product B-product
-888 I-product O
+888 I-product I-product
 looks O O
 fake O O
 
@@ -16396,7 +16396,7 @@ billa O O
 da O O
 
 think O O
-hoopa O O
+hoopa O B-person
 spawns O O
 on O O
 the O O
@@ -16534,7 +16534,7 @@ think O O
 its O O
 like O O
 a O O
-hollywood B-location O
+hollywood B-location B-creativework
 teaser O O
 . O O
 . O O
@@ -16566,7 +16566,7 @@ cute O O
 call O O
 us O O
 " O O
-martians O O
+martians O B-product
 " O O
 cause O O
 your O O
@@ -16584,7 +16584,7 @@ was O O
 funny O O
 ? O O
 Billy B-person B-person
-O I-person I-person
+O I-person O
 ' O O
 cuntface O O
 did O O
@@ -16618,7 +16618,7 @@ swear O O
 I O O
 saw O O
 a O O
-Starbucks B-corporation B-corporation
+Starbucks B-corporation O
 . O O
 THEY O O
 ' O O
