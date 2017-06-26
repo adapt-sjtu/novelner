@@ -169,6 +169,24 @@ def prepare_sentence(str_words, word_to_id, char_to_id, lower=False):
     Prepare a sentence for evaluation.
     """
     def f(x): return x.lower() if lower else x
+
+    # str_words_new = []
+    # if ('http' in str_words or 'https' in str_words):
+    #     ind = str_words_new.index('http')
+    str_words_new = []
+    in_url = False
+    for i in range(len(str_words)):
+        w = str_words[i]
+        if 'http' in w:
+            in_url = True
+
+        if in_url:
+            str_words_new.append('1')
+            if '/' not in str_words[i:]:
+                in_url = False
+        else:
+            str_words_new.append(w)
+    str_words = str_words_new
     words = [word_to_id[f(w) if f(w) in word_to_id else '<UNK>']
              for w in str_words]
     chars = [[char_to_id[c] for c in w if c in char_to_id]
