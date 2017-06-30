@@ -182,9 +182,9 @@ def evaluate(iterable, options=None):
         surface_forms_guessed.add(current_phrase_guessed.strip())
 
     # crude - would be gentler if it used the existing api
-    r_surf = len(surface_forms_guessed.intersection(surface_forms_correct)) / float(len(surface_forms_correct))
-    p_surf = len(surface_forms_guessed.intersection(surface_forms_correct)) / float(len(surface_forms_guessed))
-    f1_surf = 2 * p_surf * r_surf / (p_surf + r_surf)
+    r_surf = len(surface_forms_guessed.intersection(surface_forms_correct)) / float(len(surface_forms_correct)+0.0000001)
+    p_surf = len(surface_forms_guessed.intersection(surface_forms_correct)) / float(len(surface_forms_guessed)+0.0000001)
+    f1_surf = 2 * p_surf * r_surf / (p_surf + r_surf+0.0000001)
     print ('surface forms:     precision: %6.2f%%; recall: %6.2f%%; FB1: %6.2f' % (p_surf*100, r_surf*100, f1_surf*100))
 
     return counts

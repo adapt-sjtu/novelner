@@ -12,8 +12,10 @@ def load_sentences(path, lower, zeros):
     """
     sentences = []
     sentence = []
+    ind = 0
     for line in codecs.open(path, 'r', 'utf8'):
         line = zero_digits(line.rstrip()) if zeros else line.rstrip()
+        line = line.replace('creative-work','creativework')
         if not line:
             if len(sentence) > 0:
                 if 'DOCSTART' not in sentence[0][0]:
@@ -22,9 +24,10 @@ def load_sentences(path, lower, zeros):
         else:
             word = line.split()
             if len(word)<6:
-                print line
+                print line,ind,path
             assert len(word) == 6
             sentence.append(word)
+        ind += 1
     if len(sentence) > 0:
         if 'DOCSTART' not in sentence[0][0]:
             sentences.append(sentence)
@@ -40,6 +43,8 @@ def update_tag_scheme(sentences, tag_scheme):
         tags = [w[-1] for w in s]
         # Check that tags are given in the IOB format
         if not iob2(tags):
+            print '-------------------------'
+            print s
             s_str = '\n'.join(' '.join(w) for w in s)
             raise Exception('Sentences should be given in IOB format! ' +
                             'Please check sentence %i:\n%s' % (i, s_str))
@@ -173,20 +178,20 @@ def prepare_sentence(str_words, word_to_id, char_to_id, lower=False):
     # str_words_new = []
     # if ('http' in str_words or 'https' in str_words):
     #     ind = str_words_new.index('http')
-    str_words_new = []
-    in_url = False
-    for i in range(len(str_words)):
-        w = str_words[i]
-        if 'http' in w:
-            in_url = True
+   # str_words_new = []
+   # in_url = False
+   # for i in range(len(str_words)):
+   #     w = str_words[i]
+   #     if 'http' in w:
+   #         in_url = True
 
-        if in_url:
-            str_words_new.append('1')
-            if '/' not in str_words[i:]:
-                in_url = False
-        else:
-            str_words_new.append(w)
-    str_words = str_words_new
+   #     if in_url:
+   #         str_words_new.append('1')
+   #         if '/' not in str_words[i:]:
+   #             in_url = False
+   #     else:
+   #         str_words_new.append(w)
+   # str_words = str_words_new
     words = [word_to_id[f(w) if f(w) in word_to_id else '<UNK>']
              for w in str_words]
     chars = [[char_to_id[c] for c in w if c in char_to_id]

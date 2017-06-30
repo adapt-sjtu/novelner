@@ -8,7 +8,7 @@ from collections import OrderedDict
 from utils import create_input
 import loader
 
-from utils import models_path, evaluate, eval_script, eval_temp
+from utils import models_path, evaluate, evaluate_test, eval_script, eval_temp
 from loader import word_mapping, char_mapping, tag_mapping,pos_mapping
 from loader import update_tag_scheme, prepare_dataset
 from loader import augment_with_pretrained
@@ -190,16 +190,16 @@ if parameters['pre_emb']:
         ) if not parameters['all_emb'] else None
     )
 else:
-    dico_words, word_to_id, id_to_word = word_mapping(train_sentences, lower)
+    dico_words, word_to_id, id_to_word = word_mapping(train_sentences + dev_sentences + test_sentences, lower)
     dico_words_train = dico_words
 
 # Create a dictionary and a mapping for words / POS tags / tags
-dico_chars, char_to_id, id_to_char = char_mapping(train_sentences)
-dico_tags, tag_to_id, id_to_tag = tag_mapping(train_sentences)
-dico_postags, postag_to_id, id_to_postag = pos_mapping(train_sentences)
-dico_deps, dep_to_id, id_to_dep = loader.dep_mapping(train_sentences)
-dico_inds, ind_to_id, id_to_ind = loader.ind_mapping(train_sentences)
-dico_heads, head_to_id, id_to_head = loader.head_mapping(train_sentences)
+dico_chars, char_to_id, id_to_char = char_mapping(train_sentences+dev_sentences+test_sentences)
+dico_tags, tag_to_id, id_to_tag = tag_mapping(train_sentences+dev_sentences+test_sentences)
+dico_postags, postag_to_id, id_to_postag = pos_mapping(train_sentences+dev_sentences+test_sentences)
+dico_deps, dep_to_id, id_to_dep = loader.dep_mapping(train_sentences+dev_sentences+test_sentences)
+dico_inds, ind_to_id, id_to_ind = loader.ind_mapping(train_sentences+dev_sentences+test_sentences)
+dico_heads, head_to_id, id_to_head = loader.head_mapping(train_sentences+dev_sentences+test_sentences)
 
 # Index data
 train_data = prepare_dataset(
@@ -209,7 +209,7 @@ dev_data = prepare_dataset(
     dev_sentences, word_to_id, char_to_id, tag_to_id, postag_to_id, dep_to_id, ind_to_id, head_to_id, lower
 )
 test_data = prepare_dataset(
-    test_sentences, word_to_id, char_to_id, tag_to_id,postag_to_id, dep_to_id, ind_to_id, head_to_id, lower
+    test_sentences, word_to_id, char_to_id, tag_to_id, postag_to_id, dep_to_id, ind_to_id, head_to_id, lower
 )
 
 print "%i / %i / %i sentences in train / dev / test." % (
@@ -237,23 +237,22 @@ freq_eval = 1000  # evaluate on dev every freq_eval steps
 best_dev = -np.inf
 best_test = -np.inf
 count = 0
+non_increase = 0
 for epoch in xrange(n_epochs):
     try:
         epoch_costs = []
         print "Starting epoch %i..." % epoch
-        non_increase = 0
         for i, index in enumerate(np.random.permutation(len(train_data))):
             count += 1
             input = create_input(train_data[index], parameters, True, singletons)
             new_cost = f_train(*input)
             epoch_costs.append(new_cost)
-            if i % 50 == 0 and i > 0 == 0:
+            if i % 50 == 0 and i>0:
                 print "%i, cost average: %f" % (i, np.mean(epoch_costs[-50:]))
             if count % freq_eval == 0:
+                print 'Start evaluating dev'
                 dev_score = evaluate(parameters, f_eval, dev_sentences,
                                      dev_data, id_to_tag, dico_tags)
-                #test_score = evaluate(parameters, f_eval, test_sentences,
-                #                      test_data, id_to_tag, dico_tags)
                 print "Score on dev: %.5f ; Now epoch is %i" %(dev_score,epoch)
                 
                 #print "Score on test: %.5f" % test_score
@@ -263,7 +262,9 @@ for epoch in xrange(n_epochs):
                     print "New best score on dev."
                     print "Saving model to disk..."
                     model.save()
-
+                    print 'Saving test reuslt to disk' 
+                    test_score = evaluate_test(parameters, f_eval, test_sentences,
+                                                 test_data, id_to_tag, dico_tags)
                 #if test_score > best_test:
                 #    best_test = test_score
                 #    print "New best score on test."

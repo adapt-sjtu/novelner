@@ -70,38 +70,38 @@ def predictAccuracyAndWrite(logits,transition_params,seq_length,y_batch,step,x_b
         correct_labels_low_classes = 0
         total_labels_low_classes = 0
         fname = prefix_filename + "_Predictions_" +str(step)+".txt"
-        
-        with open(fname, 'w') as outfile:
-            outfile.write("word\ty_label\tpred_label\n")
-            for tf_unary_scores_, y_, sequence_length_, x_ in zip(logits, y_batch,seq_length,x_batch):
-                # Remove padding from the scores and tag sequence.
-                tf_unary_scores_ = tf_unary_scores_[-sequence_length_:] if beginZero else tf_unary_scores_[:sequence_length_] 
-                #for writing to file
-                y_ = y_[-sequence_length_:] if beginZero else y_[:sequence_length_]
-                x_ = x_[-sequence_length_:] if beginZero else x_[:sequence_length_]
-                # Compute the highest scoring sequence.
-                viterbi_sequence, viterbi_score = tf.contrib.crf.viterbi_decode(
-                      tf_unary_scores_, transition_params)
-                for xi,yi,vi in zip(x_,y_,viterbi_sequence):
-                    x_word = word_alphabet.get_instance(xi)
-                    y_label = label_alphabet.get_instance(yi)
-                    pred_label = label_alphabet.get_instance(vi)
-                    outfile.write(str(x_word) + "\t"+str(y_label)+"\t"+str(pred_label)+"\n")
-                    if(y_label != "O"):  
-                        total_labels_low_classes = total_labels_low_classes + 1
-                        if (y_label == pred_label):
-                            correct_labels_low_classes = correct_labels_low_classes +1 
-                outfile.write("\n")    
-                # Evaluate word-level accuracy.
-                correct_labels += np.sum(np.equal(viterbi_sequence, y_))
-                total_labels += sequence_length_  
-            accuracy = 100.0 * correct_labels / float(total_labels+1)
-            accuracy_low_classes = 100.0 * correct_labels_low_classes / float(total_labels_low_classes+1) 
-            outfile.write("accuracy: " + str(accuracy))
-            outfile.write("\naccuracy for classes except other : " + str(accuracy_low_classes))
-            outfile.write("\ntotal other classes : {}, correctly predicted : {}  ".format(total_labels_low_classes,correct_labels_low_classes ))
-            outfile.write("\ntotal : {}, correctly predicted : {}  ".format(total_labels,correct_labels ))
-        return accuracy,accuracy_low_classes
+        output = ""
+	for tf_unary_scores_, y_, sequence_length_, x_ in zip(logits, y_batch,seq_length,x_batch):
+		# Remove padding from the scores and tag sequence.
+		tf_unary_scores_ = tf_unary_scores_[-sequence_length_:] if beginZero else tf_unary_scores_[:sequence_length_] 
+		#for writing to file
+		y_ = y_[-sequence_length_:] if beginZero else y_[:sequence_length_]
+		x_ = x_[-sequence_length_:] if beginZero else x_[:sequence_length_]
+		# Compute the highest scoring sequence.
+		viterbi_sequence, viterbi_score = tf.contrib.crf.viterbi_decode(
+			  tf_unary_scores_, transition_params)
+		for xi,yi,vi in zip(x_,y_,viterbi_sequence):
+			x_word = word_alphabet.get_instance(xi)
+			y_label = label_alphabet.get_instance(yi)
+			pred_label = label_alphabet.get_instance(vi)
+			output += str(x_word) + "\t"+str(y_label)+"\t"+str(pred_label)+"\n"
+			if(y_label != "O"):  
+				total_labels_low_classes = total_labels_low_classes + 1
+				if (y_label == pred_label):
+					correct_labels_low_classes = correct_labels_low_classes +1 
+		output += "\n"
+		# Evaluate word-level accuracy.
+		correct_labels += np.sum(np.equal(viterbi_sequence, y_))
+		total_labels += sequence_length_  
+
+	accuracy = 100.0 * correct_labels / float(total_labels+1)
+	accuracy_low_classes = 100.0 * correct_labels_low_classes / float(total_labels_low_classes+1) 
+	#outfile.write("accuracy: " + str(accuracy))
+	#outfile.write("\naccuracy for classes except other : " + str(accuracy_low_classes))
+	#outfile.write("\ntotal other classes : {}, correctly predicted : {}  ".format(total_labels_low_classes,correct_labels_low_classes ))
+	#outfile.write("\ntotal : {}, correctly predicted : {}  ".format(total_labels,correct_labels ))
+
+        return accuracy,accuracy_low_classes,fname,output
 
 def test_step(logger,session,BiLSTM,PadZeroBegin,max_length,test_path,
     dropout_keep_prob,step,out_dir,char_alphabet,label_alphabet,word_alphabet,

@@ -102,10 +102,14 @@ def build_embedd_table(word_alphabet, embedd_dict, embedd_dim, caseless):
     # the extra words in glove will not be trained but can help with UNK 
     embedd_table = np.empty([word_alphabet.size(), embedd_dim], dtype=np.float64)
     embedd_table[word_alphabet.default_index, :] = np.random.uniform(-scale, scale, [1, embedd_dim])
+    count = 0
     for word, index in word_alphabet.items():
         ww = word.lower() if caseless else word
+        if ww in embedd_dict:
+            count+=1
         embedd = embedd_dict[ww] if ww in embedd_dict else np.random.uniform(-scale, scale, [1, embedd_dim])
         embedd_table[index, :] = embedd
+    logger.info('# word in glove %d , ratio is %s' % (count,str(float(count)/word_alphabet.size())))
     return embedd_table
 
 def construct_padded_char(index_sentences,char_alphabet,max_sent_length,max_char_per_word):

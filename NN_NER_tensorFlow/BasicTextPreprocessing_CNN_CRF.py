@@ -48,19 +48,19 @@ tf.flags.DEFINE_float("max_global_clip", 5.0, "value for gradient clipping to av
 
 
 # Training parameters
-tf.flags.DEFINE_integer("batch_size", 10, "Batch Size (default: 64)")
+tf.flags.DEFINE_integer("batch_size", 64, "Batch Size (default: 64)")
 tf.flags.DEFINE_integer("word_col", 0, "position of the word in input file (default: 0)")
 tf.flags.DEFINE_integer("label_col", 5, "position of the label in input file (default: 3)")
 tf.flags.DEFINE_integer("n_hidden_LSTM", 50, "Number of hidden units in LSTM (default: 200)")
 tf.flags.DEFINE_integer("num_epochs", 100, "Number of training epochs (default: 200)")
-tf.flags.DEFINE_integer("num_filters", 10, "Number of filters to apply for char CNN (default: 30)")
+tf.flags.DEFINE_integer("num_filters", 30, "Number of filters to apply for char CNN (default: 30)")
 tf.flags.DEFINE_integer("filter_size", 3, "filter_size (default: 3 )")
-tf.flags.DEFINE_integer("evaluate_every", 50, "Evaluate model on dev set after this many steps (default: 100)")
-tf.flags.DEFINE_integer("char_embedd_dim", 10, "char_embedd_dim(default: 30)")
+tf.flags.DEFINE_integer("evaluate_every", 100, "Evaluate model on dev set after this many steps (default: 100)")
+tf.flags.DEFINE_integer("char_embedd_dim", 30, "char_embedd_dim(default: 30)")
 tf.flags.DEFINE_integer("Optimizer", 1, "Adam : 1 , SGD:2")
 tf.flags.DEFINE_integer("num_checkpoints", 5, "Number of checkpoints to store (default: 5)")
 tf.flags.DEFINE_float("starter_learning_rate", 0.015, "Initial learning rate for the optimizer. (default: 1e-3)")
-tf.flags.DEFINE_float("decay_rate", 0.05, "How much to decay the learning rate. (default: 0.015)")
+tf.flags.DEFINE_float("decay_rate", 0.015, "How much to decay the learning rate. (default: 0.015)")
 
 # Misc Parameters
 tf.flags.DEFINE_boolean("allow_soft_placement", True, "Allow device soft device placement")
@@ -265,13 +265,13 @@ with tf.Session(config=session_conf) as sess:
 
         feed_dict = af.create_feed_Dict(BiLSTM,PadZeroBegin,max_length,x_batch,y_batch,act_seq_lengths,dropout_keep_prob,embedd_table,char_batch,char_embedd_table)
         logits, transition_params,summaries = session.run([BiLSTM.logits, BiLSTM.transition_params,dev_summary_op],feed_dict=feed_dict)
-        accuracy,accuracy_low_classes = af.predictAccuracyAndWrite(logits,transition_params,act_seq_lengths,y_batch,step,x_batch,word_alphabet,label_alphabet,beginZero=FLAGS.PadZeroBegin)
+        accuracy,accuracy_low_classes,fname,output = af.predictAccuracyAndWrite(logits,transition_params,act_seq_lengths,y_batch,step,x_batch,word_alphabet,label_alphabet,beginZero=FLAGS.PadZeroBegin)
 
         time_str = datetime.datetime.now().isoformat()
         print("{}: step {},  accuracy on dev set {:g}, accuracy for classes except Others: {:g}".format(time_str, step,accuracy,accuracy_low_classes))
         if writer:
                 writer.add_summary(summaries, step)
-        return accuracy,accuracy_low_classes
+        return accuracy,accuracy_low_classes,fname,output
 
     def train_step(session,BiLSTM,PadZeroBegin,max_length,x_batch, y_batch,act_seq_lengths,dropout_keep_prob,embedd_table,char_batch,char_embedd_table):
         """
@@ -299,12 +299,19 @@ with tf.Session(config=session_conf) as sess:
         current_step = tf.train.global_step(sess, global_step)
         if current_step % FLAGS.evaluate_every == 0:
             print("\nEvaluation:")
-            new_accuracy,accuracy_low_classes=dev_step(sess,BiLSTM,FLAGS.PadZeroBegin,max_length,word_index_sentences_dev_pad,
+            new_accuracy,accuracy_low_classes,fname,output=dev_step(sess,BiLSTM,FLAGS.PadZeroBegin,max_length,word_index_sentences_dev_pad,
                                             label_index_sentences_dev_pad ,dev_seq_length,FLAGS.dropout_keep_prob,
                                             embedd_table,current_step,char_index_dev_pad,char_embedd_table, writer=dev_summary_writer)
             print("")
+            f = open(fname,'w')
+            f.write(output)
+            f.close()
+            os.system('python ../data/wnuteval.py '+fname)
             if (accuracy_low_classes > best_accuracy):
-
+                os.system('rm *.txt')
+                f = open(fname,'w')
+            	f.write(output)
+            	f.close()
                 path = saver.save(sess, checkpoint_prefix, global_step=current_step)
                 best_accuracy = accuracy_low_classes
                 best_step = current_step

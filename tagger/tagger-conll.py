@@ -59,7 +59,8 @@ with codecs.open(opts.input, 'r', 'utf-8') as f_input:
     prev = "" 
     for line in f_input:
 	if line.strip() != "":
-            word,y_label = line.rstrip().split()
+            ls = line.rstrip().split() 
+            word,y_label = ls[0],ls[-1] 
             words.append(word)
             y_labels.append(y_label)
             prev = word

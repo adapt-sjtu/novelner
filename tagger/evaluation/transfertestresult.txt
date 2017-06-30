@@ -1,9 +1,2 @@
-surface forms:     precision:  58.30%; recall:  91.67%; FB1:  71.27
-processed 15723 tokens with 835 phrases; found: 651 phrases; correct: 414.
-accuracy:  95.03%; precision:  63.59%; recall:  49.58%; FB1:  55.72
-      corporation: precision:  27.27%; recall:  27.27%; FB1:  27.27  33
-     creativework: precision:  28.00%; recall:   6.67%; FB1:  10.77  25
-            group: precision:  25.00%; recall:  17.95%; FB1:  20.90  28
-         location: precision:  64.29%; recall:  60.81%; FB1:  62.50  70
-           person: precision:  73.03%; recall:  70.85%; FB1:  71.92  456
-          product: precision:  33.33%; recall:  11.40%; FB1:  16.99  39
+surface forms:     precision:   0.00%; recall:   0.00%; FB1:   0.00
+processed 0 tokens with 0 phrases; found: 0 phrases; correct: 0.
